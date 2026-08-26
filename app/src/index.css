@@ -515,7 +515,9 @@ body.nav-open { overflow: hidden; }
   flex-shrink: 0;
 }
 .hero__trust-card strong { display: block; font-size: 0.92rem; color: var(--navy-900); }
-.hero__trust-card span { display: block; font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+/* Scoped to the text wrapper — a bare `.hero__trust-card span` also matches the
+   icon span and outranks its class, breaking its centring and colour. */
+.hero__trust-card > div span { display: block; font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
 /* On narrow screens the card would swallow the photo — stack it below instead. */
 @media (max-width: 620px) {
   .hero__art { flex-direction: column; padding-bottom: 0; }
@@ -1465,7 +1467,8 @@ address { font-style: normal; }
   flex-shrink: 0;
 }
 .about-highlights strong { display: block; font-size: 0.94rem; color: var(--navy-900); }
-.about-highlights span { display: block; font-size: 0.86rem; color: var(--muted); margin-top: 2px; }
+/* Scoped to the text wrapper so it can't outrank .about-highlights__icon. */
+.about-highlights li > div span { display: block; font-size: 0.86rem; color: var(--muted); margin-top: 2px; }
 
 /* ---------- Progression path (Programs page) ---------- */
 .progress-path {
