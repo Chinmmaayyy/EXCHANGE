@@ -439,7 +439,7 @@ body.nav-open { overflow: hidden; }
   display: flex;
   justify-content: center;
   padding-bottom: 42px;
-  width: min(440px, 100%);
+  width: min(580px, 100%);
   margin-inline: auto;
 }
 /* Soft chess-checker halo behind the photo (brand pattern, not a stock graphic). */
@@ -458,17 +458,17 @@ body.nav-open { overflow: hidden; }
   pointer-events: none;
   z-index: 0;
 }
-/* Gold accent block peeking out behind the photo frame. */
+/* Gold accent layer peeking from behind the right edge of the photo frame. */
 .hero__art::after {
   content: "";
   position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 46%;
-  height: 42%;
+  top: 26px;
+  right: -16px;
+  bottom: 78px;
+  width: 52%;
   border-radius: var(--r-lg);
   background: linear-gradient(135deg, var(--gold-400), var(--gold-100));
-  opacity: 0.5;
+  opacity: 0.45;
   pointer-events: none;
   z-index: 0;
 }
@@ -481,13 +481,13 @@ body.nav-open { overflow: hidden; }
   background: var(--neutral-100);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
 }
 .hero__photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center;
   display: block;
 }
 
@@ -516,8 +516,15 @@ body.nav-open { overflow: hidden; }
 }
 .hero__trust-card strong { display: block; font-size: 0.92rem; color: var(--navy-900); }
 .hero__trust-card span { display: block; font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
-@media (max-width: 480px) {
-  .hero__trust-card { flex-direction: column; text-align: center; gap: 8px; }
+/* On narrow screens the card would swallow the photo — stack it below instead. */
+@media (max-width: 620px) {
+  .hero__art { flex-direction: column; padding-bottom: 0; }
+  .hero__art::after { bottom: 90px; }
+  .hero__trust-card {
+    position: static;
+    margin-top: 14px;
+    box-shadow: var(--shadow-md);
+  }
 }
 
 /* ---------- Chessboard art (reusable) ---------- */

@@ -40,10 +40,10 @@ export default function Hero() {
           <div className="hero__photo-frame">
             <img
               className="hero__photo"
-              src="/assets/hero-coach.jpg"
-              alt="Amar Ravindra More coaching a student at a school chess session in Mumbai"
-              width="800"
-              height="1000"
+              src="/assets/hero-teaching.jpg"
+              alt="A chess coach guiding a young student through a move during a 1-to-1 lesson"
+              width="1100"
+              height="825"
             />
           </div>
 
