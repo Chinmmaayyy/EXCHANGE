@@ -33,8 +33,8 @@ export default function AboutPage() {
                   className="coach-photo__img"
                   src="/assets/coach-portrait.jpg"
                   alt="Amar Ravindra More, chess coach at Exchange Chess Academy, Mumbai"
-                  width="700"
-                  height="911"
+                  width="720"
+                  height="900"
                 />
                 <div className="coach-photo__badge">FIDE ID 46637966 · Standard Rating 1603</div>
               </div>
