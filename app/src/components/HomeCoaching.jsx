@@ -50,7 +50,7 @@ export default function HomeCoaching({ onOpenModal: propOnOpenModal }) {
           <div className="split__visual visual-panel visual-panel--photo">
             <img
               src="/assets/home-coaching.webp"
-              alt="Amar Ravindra More coaching two students at a home chess session in Mumbai"
+              alt="Personalized Chess Coaching Across Mumbai — Exchange Chess Academy 1-to-1 home and online coaching"
               loading="lazy"
               width="1024"
               height="572"
