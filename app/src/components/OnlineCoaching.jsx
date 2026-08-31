@@ -2,6 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
 import { CheckIcon, WhatsAppIcon, MonitorIcon, TrendingUpIcon, UsersIcon, CalendarIcon } from "./Icons.jsx";
 import { waLink } from "../data/content.js";
+import ChessPieceSvg from "./ChessPieceSvg.jsx";
 
 const points = [
   "Live one-to-one instruction",
@@ -11,31 +12,19 @@ const points = [
   "Flexible scheduling from anywhere",
 ];
 
-// Sample tactical position pieces (high contrast SVG rendering)
-const initialPosition = [
-  // Black pieces (white crisp fill with dark stroke)
-  { x: 4, y: 0, p: "♚", color: "#ffffff" },
-  { x: 3, y: 0, p: "♛", color: "#ffffff" },
-  { x: 2, y: 0, p: "♝", color: "#ffffff" },
-  { x: 5, y: 2, p: "♞", color: "#ffffff" },
-  { x: 0, y: 1, p: "♟", color: "#ffffff" },
-  { x: 1, y: 1, p: "♟", color: "#ffffff" },
-  { x: 2, y: 1, p: "♟", color: "#ffffff" },
-  { x: 4, y: 3, p: "♟", color: "#ffffff" },
-  { x: 6, y: 1, p: "♟", color: "#ffffff" },
-  { x: 7, y: 1, p: "♟", color: "#ffffff" },
+// Board position matching standard tournament opening (Reference layout)
+const boardPieces = [
+  // Black pieces (top rows)
+  { type: "bR", x: 0, y: 0 }, { type: "bN", x: 1, y: 0 }, { type: "bB", x: 2, y: 0 }, { type: "bQ", x: 3, y: 0 },
+  { type: "bK", x: 4, y: 0 }, { type: "bB", x: 5, y: 0 }, { type: "bN", x: 6, y: 0 }, { type: "bR", x: 7, y: 0 },
+  { type: "bP", x: 0, y: 1 }, { type: "bP", x: 1, y: 1 }, { type: "bP", x: 2, y: 1 }, { type: "bP", x: 3, y: 2 },
+  { type: "bP", x: 4, y: 3 }, { type: "bP", x: 5, y: 1 }, { type: "bP", x: 6, y: 1 }, { type: "bP", x: 7, y: 1 },
 
-  // White pieces (bright gold fill with dark stroke)
-  { x: 4, y: 7, p: "♔", color: "#ffd700" },
-  { x: 3, y: 7, p: "♕", color: "#ffd700" },
-  { x: 2, y: 4, p: "♗", color: "#ffd700" },
-  { x: 5, y: 5, p: "♘", color: "#ffd700" },
-  { x: 0, y: 6, p: "♙", color: "#ffd700" },
-  { x: 1, y: 6, p: "♙", color: "#ffd700" },
-  { x: 3, y: 4, p: "♙", color: "#ffd700" },
-  { x: 4, y: 4, p: "♙", color: "#ffd700" },
-  { x: 6, y: 6, p: "♙", color: "#ffd700" },
-  { x: 7, y: 6, p: "♙", color: "#ffd700" },
+  // White pieces (bottom rows)
+  { type: "wP", x: 0, y: 6 }, { type: "wP", x: 1, y: 6 }, { type: "wP", x: 2, y: 6 }, { type: "wP", x: 3, y: 6 },
+  { type: "wP", x: 4, y: 4 }, { type: "wN", x: 5, y: 5 }, { type: "wP", x: 6, y: 6 }, { type: "wP", x: 7, y: 6 },
+  { type: "wR", x: 0, y: 7 }, { type: "wN", x: 1, y: 7 }, { type: "wB", x: 2, y: 7 }, { type: "wQ", x: 3, y: 7 },
+  { type: "wK", x: 4, y: 7 }, { type: "wB", x: 5, y: 7 }, { type: "wR", x: 7, y: 7 },
 ];
 
 export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
@@ -54,6 +43,7 @@ export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
               </div>
               <div className="screen-mock__body">
                 <svg viewBox="0 0 8 8" className="screen-mock__board" role="img" aria-label="Chess board with active game session">
+                  {/* Tournament Green & Cream Board */}
                   {Array.from({ length: 64 }, (_, i) => {
                     const x = i % 8;
                     const y = Math.floor(i / 8);
@@ -65,26 +55,14 @@ export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
                         y={y}
                         width="1"
                         height="1"
-                        fill={dark ? "#14294a" : "#f6ecce"}
+                        fill={dark ? "#35654d" : "#eeeed2"}
                       />
                     );
                   })}
 
-                  {initialPosition.map((piece, idx) => (
-                    <text
-                      key={idx}
-                      x={piece.x + 0.5}
-                      y={piece.y + 0.82}
-                      fontSize="0.82"
-                      textAnchor="middle"
-                      fill={piece.color}
-                      stroke="#071426"
-                      strokeWidth="0.02"
-                      fontWeight="bold"
-                      style={{ userSelect: "none", filter: "drop-shadow(0 1px 1px rgba(0,0,0,0.5))" }}
-                    >
-                      {piece.p}
-                    </text>
+                  {/* Render Staunton Vector Pieces */}
+                  {boardPieces.map((piece, idx) => (
+                    <ChessPieceSvg key={idx} type={piece.type} x={piece.x} y={piece.y} />
                   ))}
                 </svg>
                 <div className="screen-mock__side">
