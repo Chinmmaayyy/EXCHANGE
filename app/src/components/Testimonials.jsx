@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import Reveal from "./Reveal.jsx";
-import { StarIcon, QuoteIcon, WhatsAppIcon } from "./Icons.jsx";
+import { StarIcon, QuoteIcon, WhatsAppIcon, ArrowRightIcon } from "./Icons.jsx";
 import { waLink } from "../data/content.js";
 
 const testimonialsData = [
@@ -46,6 +47,26 @@ const testimonialsData = [
 ];
 
 export default function Testimonials({ onOpenModal }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // 3-second auto-sliding carousel
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonialsData.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? testimonialsData.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % testimonialsData.length);
+  };
+
   return (
     <section className="section section--testimonials" id="testimonials">
       <div className="container">
@@ -57,31 +78,73 @@ export default function Testimonials({ onOpenModal }) {
           </p>
         </Reveal>
 
-        <div className="testimonials-grid">
-          {testimonialsData.map((t, idx) => (
-            <Reveal className="testimonial-card" key={idx}>
-              <div className="testimonial-card__header">
-                <div className="testimonial-card__stars">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <StarIcon key={i} size={16} color="#d4af37" />
-                  ))}
-                </div>
-                <span className="testimonial-card__tag">{t.tag}</span>
-              </div>
+        <div
+          className="testimonials-carousel"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className="testimonials-track-wrap">
+            <div
+              className="testimonials-track"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {testimonialsData.map((t, idx) => (
+                <div className="testimonial-slide" key={idx}>
+                  <div className="testimonial-card testimonial-card--focused">
+                    <div className="testimonial-card__header">
+                      <div className="testimonial-card__stars">
+                        {[...Array(t.rating)].map((_, i) => (
+                          <StarIcon key={i} size={18} color="#d4af37" />
+                        ))}
+                      </div>
+                      <span className="testimonial-card__tag">{t.tag}</span>
+                    </div>
 
-              <blockquote className="testimonial-card__quote">
-                <QuoteIcon size={24} className="testimonial-card__quote-icon" />
-                <p>&ldquo;{t.quote}&rdquo;</p>
-              </blockquote>
+                    <blockquote className="testimonial-card__quote">
+                      <QuoteIcon size={28} className="testimonial-card__quote-icon" />
+                      <p>&ldquo;{t.quote}&rdquo;</p>
+                    </blockquote>
 
-              <div className="testimonial-card__footer">
-                <div className="testimonial-card__author">
-                  <strong>{t.name}</strong>
-                  <span>{t.role} &middot; {t.location}</span>
+                    <div className="testimonial-card__footer">
+                      <div className="testimonial-card__author">
+                        <strong>{t.name}</strong>
+                        <span>{t.role} &middot; {t.location}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="testimonials-carousel-controls">
+            <button
+              className="carousel-arrow prev"
+              onClick={handlePrev}
+              aria-label="Previous review"
+            >
+              <ArrowRightIcon size={18} style={{ transform: "rotate(180deg)" }} />
+            </button>
+
+            <div className="carousel-dots">
+              {testimonialsData.map((_, i) => (
+                <button
+                  key={i}
+                  className={`carousel-dot${i === activeIndex ? " is-active" : ""}`}
+                  onClick={() => setActiveIndex(i)}
+                  aria-label={`Go to review ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              className="carousel-arrow next"
+              onClick={handleNext}
+              aria-label="Next review"
+            >
+              <ArrowRightIcon size={18} />
+            </button>
+          </div>
         </div>
 
         <Reveal className="testimonials-cta center" style={{ marginTop: 40 }}>
@@ -89,7 +152,7 @@ export default function Testimonials({ onOpenModal }) {
             Want to discuss the right coaching plan for your child?
           </p>
           <div className="testimonials-cta__buttons">
-            <button className="btn btn-primary btn-lg" onClick={onOpenModal}>
+            <button className="btn btn-primary btn-lg" onClick={() => onOpenModal && onOpenModal()}>
               Book Skill Assessment
             </button>
             <a

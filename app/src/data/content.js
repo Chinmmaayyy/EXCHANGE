@@ -13,7 +13,7 @@ export const pricingPlans = [
   {
     name: "Home Coaching",
     icon: "home",
-    price: "₹1,200",
+    price: "₹1,300",
     unit: "/ hour",
     desc: "The coach travels to your home, anywhere in Mumbai.",
     features: [
@@ -23,14 +23,14 @@ export const pricingPlans = [
       "All levels — beginner to tournament",
     ],
     featured: true,
-    waText: "Hi, I'd like to book home chess coaching (₹1,200/hour).",
+    waText: "Hi, I'd like to book home chess coaching (₹1,300/hour).",
     cta: "Book Home Coaching",
   },
   {
     name: "Online Coaching",
     icon: "monitor",
-    price: "₹1,200",
-    unit: "/ hour",
+    price: "On request",
+    unit: "1-to-1 session",
     desc: "Live 1-to-1 online sessions, from anywhere.",
     features: [
       "Live one-to-one instruction",
@@ -39,8 +39,8 @@ export const pricingPlans = [
       "Flexible scheduling",
     ],
     featured: false,
-    waText: "Hi, I'd like to book online chess coaching (₹1,200/hour).",
-    cta: "Book Online Coaching",
+    waText: "Hi, I'd like to ask for the rate for online chess coaching.",
+    cta: "Ask for Online Rate",
   },
   {
     name: "Small Group",

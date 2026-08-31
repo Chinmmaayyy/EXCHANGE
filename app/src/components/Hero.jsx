@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
-import { ClockIcon, AwardIcon, HomeIcon, UsersIcon, ShieldCheckIcon, WhatsAppIcon, CalendarIcon } from "./Icons.jsx";
+import { ClockIcon, AwardIcon, HomeIcon, UsersIcon, ShieldCheckIcon, WhatsAppIcon, CalendarIcon, QuoteIcon } from "./Icons.jsx";
 import { waLink } from "../data/content.js";
 
 export default function Hero({ onOpenModal: propOnOpenModal }) {
@@ -49,6 +49,13 @@ export default function Hero({ onOpenModal: propOnOpenModal }) {
               width="1100"
               height="825"
             />
+            <div className="hero__quote-overlay">
+              <QuoteIcon size={20} className="hero__quote-icon" />
+              <p>
+                &ldquo;Every student learns at their own pace. At Exchange Chess Academy, our structured coaching helps
+                students build confidence, improve concentration, strengthen strategic thinking, and enjoy the game of chess in a positive learning environment.&rdquo;
+              </p>
+            </div>
           </div>
 
           <div className="hero__trust-card">

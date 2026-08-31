@@ -1,6 +1,6 @@
 import { Link, useOutletContext } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
-import { CalendarIcon, QuoteIcon, AwardIcon } from "./Icons.jsx";
+import { CalendarIcon, AwardIcon } from "./Icons.jsx";
 
 export default function AcademyHighlight({ onOpenModal: propOnOpenModal }) {
   const context = useOutletContext();
@@ -42,13 +42,6 @@ export default function AcademyHighlight({ onOpenModal: propOnOpenModal }) {
               width="800"
               height="600"
             />
-            <div className="academy-quote-box">
-              <QuoteIcon size={22} className="academy-quote-box__icon" />
-              <p>
-                Every student learns at their own pace. At Exchange Chess Academy, our structured coaching helps
-                students build confidence, improve concentration, strengthen strategic thinking, and enjoy the game of chess in a positive learning environment.
-              </p>
-            </div>
           </div>
         </Reveal>
       </div>

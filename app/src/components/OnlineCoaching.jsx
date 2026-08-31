@@ -11,31 +11,31 @@ const points = [
   "Flexible scheduling from anywhere",
 ];
 
-// Sample tactical position pieces (Unicode chess characters rendered sharply in SVG)
+// Sample tactical position pieces (high contrast SVG rendering)
 const initialPosition = [
-  // Black pieces (top rows y=0,1,2)
-  { x: 4, y: 0, p: "♚", color: "#0b1f3a" },
-  { x: 3, y: 0, p: "♛", color: "#0b1f3a" },
-  { x: 2, y: 0, p: "♝", color: "#0b1f3a" },
-  { x: 5, y: 2, p: "♞", color: "#0b1f3a" },
-  { x: 0, y: 1, p: "♟", color: "#0b1f3a" },
-  { x: 1, y: 1, p: "♟", color: "#0b1f3a" },
-  { x: 2, y: 1, p: "♟", color: "#0b1f3a" },
-  { x: 4, y: 3, p: "♟", color: "#0b1f3a" },
-  { x: 6, y: 1, p: "♟", color: "#0b1f3a" },
-  { x: 7, y: 1, p: "♟", color: "#0b1f3a" },
+  // Black pieces (white crisp fill with dark stroke)
+  { x: 4, y: 0, p: "♚", color: "#ffffff" },
+  { x: 3, y: 0, p: "♛", color: "#ffffff" },
+  { x: 2, y: 0, p: "♝", color: "#ffffff" },
+  { x: 5, y: 2, p: "♞", color: "#ffffff" },
+  { x: 0, y: 1, p: "♟", color: "#ffffff" },
+  { x: 1, y: 1, p: "♟", color: "#ffffff" },
+  { x: 2, y: 1, p: "♟", color: "#ffffff" },
+  { x: 4, y: 3, p: "♟", color: "#ffffff" },
+  { x: 6, y: 1, p: "♟", color: "#ffffff" },
+  { x: 7, y: 1, p: "♟", color: "#ffffff" },
 
-  // White pieces (bottom rows y=4,5,6,7)
-  { x: 4, y: 7, p: "♔", color: "#d4af37" },
-  { x: 3, y: 7, p: "♕", color: "#d4af37" },
-  { x: 2, y: 4, p: "♗", color: "#d4af37" },
-  { x: 5, y: 5, p: "♘", color: "#d4af37" },
-  { x: 0, y: 6, p: "♙", color: "#d4af37" },
-  { x: 1, y: 6, p: "♙", color: "#d4af37" },
-  { x: 3, y: 4, p: "♙", color: "#d4af37" },
-  { x: 4, y: 4, p: "♙", color: "#d4af37" },
-  { x: 6, y: 6, p: "♙", color: "#d4af37" },
-  { x: 7, y: 6, p: "♙", color: "#d4af37" },
+  // White pieces (bright gold fill with dark stroke)
+  { x: 4, y: 7, p: "♔", color: "#ffd700" },
+  { x: 3, y: 7, p: "♕", color: "#ffd700" },
+  { x: 2, y: 4, p: "♗", color: "#ffd700" },
+  { x: 5, y: 5, p: "♘", color: "#ffd700" },
+  { x: 0, y: 6, p: "♙", color: "#ffd700" },
+  { x: 1, y: 6, p: "♙", color: "#ffd700" },
+  { x: 3, y: 4, p: "♙", color: "#ffd700" },
+  { x: 4, y: 4, p: "♙", color: "#ffd700" },
+  { x: 6, y: 6, p: "♙", color: "#ffd700" },
+  { x: 7, y: 6, p: "♙", color: "#ffd700" },
 ];
 
 export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
@@ -74,12 +74,14 @@ export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
                     <text
                       key={idx}
                       x={piece.x + 0.5}
-                      y={piece.y + 0.78}
-                      fontSize="0.72"
+                      y={piece.y + 0.82}
+                      fontSize="0.82"
                       textAnchor="middle"
                       fill={piece.color}
+                      stroke="#071426"
+                      strokeWidth="0.02"
                       fontWeight="bold"
-                      style={{ userSelect: "none" }}
+                      style={{ userSelect: "none", filter: "drop-shadow(0 1px 1px rgba(0,0,0,0.5))" }}
                     >
                       {piece.p}
                     </text>
@@ -108,21 +110,21 @@ export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
             ))}
           </ul>
           <p style={{ marginTop: 22, fontWeight: 700, color: "var(--navy-900)" }}>
-            ₹1,200 / hour for online coaching
+            Pricing available on request
           </p>
           <div className="split__ctas">
-            <button className="btn btn-primary btn-lg" onClick={onOpenModal}>
+            <button className="btn btn-primary btn-lg" onClick={() => onOpenModal && onOpenModal("Online Coaching")}>
               <CalendarIcon size={18} />
               Book Skill Assessment
             </button>
             <a
               className="btn btn-whatsapp btn-lg"
-              href={waLink("Hi, I'd like to enquire about online chess coaching.")}
+              href={waLink("Hi, I'd like to ask for the rate for online chess coaching.")}
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon size={18} />
-              Enquire on WhatsApp
+              Ask for Online Rate
             </a>
           </div>
         </Reveal>

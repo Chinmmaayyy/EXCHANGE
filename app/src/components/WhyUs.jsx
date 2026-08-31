@@ -15,7 +15,7 @@ const ICONS = {
 
 export default function WhyUs() {
   return (
-    <section className="section section--navy" id="why-us">
+    <section className="section section--alt" id="why-us">
       <div className="container">
         <Reveal className="section-head center">
           <p className="eyebrow" style={{ justifyContent: "center" }}>Why Choose Exchange Chess Academy</p>
