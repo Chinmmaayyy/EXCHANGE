@@ -1,7 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import Seo from "../components/Seo.jsx";
 import Hero from "../components/Hero.jsx";
-import AcademyHighlight from "../components/AcademyHighlight.jsx";
 import AboutTeaser from "../components/AboutTeaser.jsx";
 import Programs from "../components/Programs.jsx";
 import HomeCoaching from "../components/HomeCoaching.jsx";
@@ -25,7 +24,6 @@ export default function HomePage() {
         path="/"
       />
       <Hero onOpenModal={onOpenModal} />
-      <AcademyHighlight onOpenModal={onOpenModal} />
       <AboutTeaser />
       <Programs />
       <HomeCoaching onOpenModal={onOpenModal} />
