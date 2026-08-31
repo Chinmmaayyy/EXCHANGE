@@ -11,7 +11,9 @@ const ICONS = {
   users: UsersIcon,
 };
 
-export default function Programs() {
+export default function Programs({ limit = 3 }) {
+  const displayedPrograms = limit ? programs.slice(0, limit) : programs;
+
   return (
     <section className="section section--alt" id="programs">
       <div className="container">
@@ -19,13 +21,13 @@ export default function Programs() {
           <p className="eyebrow" style={{ justifyContent: "center" }}>Chess Coaching Programs</p>
           <h2>Structured Chess Coaching for Every Level</h2>
           <p className="lede" style={{ marginInline: "auto", marginTop: 14 }}>
-            Coaching is designed around each student's current level and goals, not a fixed
+            Coaching is designed around each student&apos;s current level and goals, not a fixed
             one-size-fits-all curriculum.
           </p>
         </Reveal>
 
         <div className="cards-grid">
-          {programs.map((p) => {
+          {displayedPrograms.map((p) => {
             const Icon = ICONS[p.icon];
             return (
               <Reveal as="article" className="program-card" key={p.title}>
@@ -42,7 +44,7 @@ export default function Programs() {
         </div>
 
         <Reveal className="teaser-cta" style={{ justifyContent: "center" }}>
-          <Link className="btn btn-outline" to="/programs">
+          <Link className="btn btn-outline btn-lg" to="/programs">
             View Full Program Details
             <ArrowRightIcon size={17} />
           </Link>
