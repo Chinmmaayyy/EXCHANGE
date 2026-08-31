@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { WhatsAppIcon, CloseIcon } from "./Icons.jsx";
+import { WhatsAppIcon, CloseIcon, ShieldCheckIcon } from "./Icons.jsx";
 import { waLink } from "../data/content.js";
 
 const initialForm = {
@@ -12,19 +12,25 @@ const initialForm = {
   message: "",
 };
 
-export default function EnquiryModal({ isOpen, onClose }) {
+export default function EnquiryModal({ isOpen, onClose, initialMode }) {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState("");
 
   useEffect(() => {
+    if (initialMode) {
+      setForm((f) => ({ ...f, mode: initialMode }));
+    }
+  }, [initialMode]);
+
+  useEffect(() => {
     function handleKeyDown(e) {
       if (e.key === "Escape" && isOpen) {
-        onClose();
+        handleDismiss();
       }
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -38,6 +44,11 @@ export default function EnquiryModal({ isOpen, onClose }) {
   }, [isOpen]);
 
   if (!isOpen) return null;
+
+  function handleDismiss() {
+    sessionStorage.setItem("modal_dismissed_at", Date.now().toString());
+    onClose();
+  }
 
   function update(field) {
     return (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
@@ -53,18 +64,21 @@ export default function EnquiryModal({ isOpen, onClose }) {
     }
 
     const lines = [
-      "Hi, I'd like to book a chess coaching skill assessment with Exchange Chess Academy.",
+      "🎯 *Chess Coaching Enquiry — Exchange Chess Academy*",
       "",
-      `Name: ${name.trim()}`,
-      `Age: ${age.trim()}`,
-      `Current Chess Level: ${level}`,
-      `Preferred Coaching Mode: ${mode}`,
+      `👤 *Parent / Student Name:* ${name.trim()}`,
+      `👶 *Student Age:* ${age.trim()}`,
+      `♟️ *Current Chess Level:* ${level}`,
+      `🏠 *Coaching Format:* ${mode}`,
     ];
-    if (area.trim()) lines.push(`Location / Area: ${area.trim()}`);
-    if (timing.trim()) lines.push(`Preferred Timing: ${timing.trim()}`);
-    if (message.trim()) lines.push(`Message: ${message.trim()}`);
+    if (area.trim()) lines.push(`📍 *Location / Area:* ${area.trim()}`);
+    if (timing.trim()) lines.push(`⏰ *Preferred Timing:* ${timing.trim()}`);
+    if (message.trim()) lines.push(`💬 *Message:* ${message.trim()}`);
+    lines.push("");
+    lines.push("Looking forward to connecting with Coach Amar Ravindra More!");
 
     setStatus("Opening WhatsApp with your enquiry...");
+    sessionStorage.setItem("modal_dismissed_at", Date.now().toString());
     window.open(waLink(lines.join("\n")), "_blank", "noopener");
     setTimeout(() => {
       setStatus("");
@@ -73,7 +87,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
   }
 
   return (
-    <div className="modal-backdrop" onClick={onClose} role="presentation">
+    <div className="modal-backdrop" onClick={handleDismiss} role="presentation">
       <div
         className="modal-content"
         onClick={(e) => e.stopPropagation()}
@@ -83,17 +97,20 @@ export default function EnquiryModal({ isOpen, onClose }) {
       >
         <button
           className="modal-close"
-          onClick={onClose}
+          onClick={handleDismiss}
           aria-label="Close modal"
         >
           <CloseIcon size={20} />
         </button>
 
         <div className="modal-header">
-          <p className="eyebrow" style={{ marginBottom: 4 }}>Exchange Chess Academy</p>
-          <h2 id="modal-title">Book a Skill Assessment &amp; Enquiry</h2>
+          <div className="modal-badge">
+            <ShieldCheckIcon size={16} />
+            <span>FIDE Rated Coach &middot; 25+ Years Experience</span>
+          </div>
+          <h2 id="modal-title" style={{ marginTop: 8 }}>Book a Skill Assessment &amp; Enquiry</h2>
           <p className="modal-sub">
-            Fill in your details below to send a direct inquiry to FIDE-rated coach Amar Ravindra More on WhatsApp.
+            Fill in your details below to send a formatted inquiry directly to FIDE-rated coach Amar Ravindra More on WhatsApp.
           </p>
         </div>
 
@@ -192,7 +209,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
           <div className="modal-actions" style={{ marginTop: 20 }}>
             <button type="submit" className="btn btn-whatsapp btn-lg btn-block">
               <WhatsAppIcon size={19} />
-              Send Enquiry via WhatsApp
+              Send Formatted WhatsApp Enquiry
             </button>
             {status && <p className="form-status" role="status" aria-live="polite">{status}</p>}
             <p className="modal-note">Your enquiry will open directly in WhatsApp to message Coach Amar Ravindra More.</p>

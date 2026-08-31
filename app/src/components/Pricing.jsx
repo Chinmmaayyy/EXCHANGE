@@ -1,10 +1,23 @@
+import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
-import { WhatsAppIcon, CheckIcon, HomeIcon, MonitorIcon, UsersIcon } from "./Icons.jsx";
-import { waLink, pricingPlans } from "../data/content.js";
+import { CheckIcon, HomeIcon, MonitorIcon, UsersIcon, CalendarIcon } from "./Icons.jsx";
+import { pricingPlans } from "../data/content.js";
+import PricingChoiceModal from "./PricingChoiceModal.jsx";
 
 const ICONS = { home: HomeIcon, monitor: MonitorIcon, users: UsersIcon };
 
-export default function Pricing() {
+export default function Pricing({ onOpenModal: propOnOpenModal }) {
+  const context = useOutletContext();
+  const onOpenModal = propOnOpenModal || context?.onOpenModal;
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const handleSelectForm = (planName) => {
+    if (onOpenModal) {
+      onOpenModal(planName);
+    }
+  };
+
   return (
     <section className="section" id="pricing">
       <div className="container">
@@ -37,25 +50,29 @@ export default function Pricing() {
                     <li key={f}><CheckIcon size={17} />{f}</li>
                   ))}
                 </ul>
-                <a
-                  className={`btn btn-block ${plan.featured ? "btn-whatsapp" : "btn-outline"}`}
-                  href={waLink(plan.waText)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  className={`btn btn-block ${plan.featured ? "btn-primary" : "btn-outline"}`}
+                  onClick={() => setSelectedPlan(plan)}
                 >
-                  <WhatsAppIcon size={17} />
+                  <CalendarIcon size={17} />
                   {plan.cta}
-                </a>
+                </button>
               </Reveal>
             );
           })}
         </div>
 
         <Reveal className="pricing-note">
-          Coaching plans can be tailored according to the student's level, requirements and schedule.
-          Get in touch on WhatsApp to discuss what suits you best.
+          Coaching plans can be tailored according to the student&apos;s level, requirements and schedule.
+          Get in touch on WhatsApp or fill in the enquiry form to discuss what suits you best.
         </Reveal>
       </div>
+
+      <PricingChoiceModal
+        plan={selectedPlan}
+        onClose={() => setSelectedPlan(null)}
+        onSelectForm={handleSelectForm}
+      />
     </section>
   );
 }
