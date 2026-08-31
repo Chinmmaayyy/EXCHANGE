@@ -187,25 +187,25 @@ export const galleryGroups = [
     items: [
       {
         caption: "Amar Ravindra More coaching two students at a home chess session in Mumbai.",
-        image: "/assets/home-coaching.jpg",
+        image: "/assets/home-coaching.webp",
         label: "Home Coaching Session",
         isPhoto: true,
       },
       {
         caption: "Teaching chess at Euro School, Airoli.",
-        image: "/gallery/coaching/coaching-02.jpg",
+        image: "/gallery/coaching/coaching-02.webp",
         label: "Euro School, Airoli",
         isPhoto: true,
       },
       {
         caption: "A chess class at Euro School, Airoli.",
-        image: "/gallery/coaching/coaching-03.jpg",
+        image: "/gallery/coaching/coaching-03.webp",
         label: "Euro School, Airoli",
         isPhoto: true,
       },
       {
         caption: "Giving student Nirali Kothari a small treat during a session at Universal School, Tardeo.",
-        image: "/gallery/coaching/coaching-04.jpg",
+        image: "/gallery/coaching/coaching-04.webp",
         label: "Universal School, Tardeo",
         isPhoto: true,
       },
@@ -218,19 +218,19 @@ export const galleryGroups = [
     items: [
       {
         caption: "An old antique chess board.",
-        image: "/gallery/equipments/equipments-01.jpg",
+        image: "/gallery/equipments/equipments-01.webp",
         label: "Antique Board",
         isPhoto: true,
       },
       {
         caption: "A demonstration board used for teaching.",
-        image: "/gallery/equipments/equipments-02.jpg",
+        image: "/gallery/equipments/equipments-02.webp",
         label: "Demonstration Board",
         isPhoto: true,
       },
       {
         caption: "Magnetic demonstration chessmen used alongside the demonstration board.",
-        image: "/gallery/equipments/equipments-03.jpg",
+        image: "/gallery/equipments/equipments-03.webp",
         label: "Demonstration Chessmen",
         isPhoto: true,
       },
@@ -243,19 +243,19 @@ export const galleryGroups = [
     items: [
       {
         caption: "Amar More (Captain), B.H. Somani College chess team, 1987–88.",
-        image: "/gallery/history/history-01.jpg",
+        image: "/gallery/history/history-01.webp",
         label: "B.H. Somani College, 1987–88",
         isPhoto: true,
       },
       {
         caption: "An older photograph, taken by Anaisha Badani, Prabhadevi.",
-        image: "/gallery/history/history-02.jpg",
+        image: "/gallery/history/history-02.webp",
         label: "From the Archives",
         isPhoto: true,
       },
       {
         caption: "An older photograph from the mobile gallery.",
-        image: "/gallery/history/history-03.jpg",
+        image: "/gallery/history/history-03.webp",
         label: "From the Archives",
         isPhoto: true,
       },
@@ -267,25 +267,25 @@ export const galleryGroups = [
 export const achievementPhotos = [
   {
     caption: "Receiving 4th Prize at the Anand Chess Festival 2025, organized by Dahisar Sports Foundation & Chanakya Chess Academy, 13 April 2025.",
-    image: "/gallery/achievements/achievements-01.jpg",
+    image: "/gallery/achievements/achievements-01.webp",
     label: "4th Prize, 2025",
     isPhoto: true,
   },
   {
     caption: "With the 4th Prize trophy, Anand Chess Festival 2025, Dahisar Sports Foundation.",
-    image: "/gallery/achievements/achievements-02.jpg",
+    image: "/gallery/achievements/achievements-02.webp",
     label: "4th Prize, 2025",
     isPhoto: true,
   },
   {
     caption: "Receiving 3rd Prize in the Entrants Chess Tournament, 2008, from Suresh Kadam Sir.",
-    image: "/gallery/achievements/achievements-03.jpg",
+    image: "/gallery/achievements/achievements-03.webp",
     label: "3rd Prize, 2008",
     isPhoto: true,
   },
   {
     caption: "Teacher Award from Pravinya Chess Academy, 23 June 2024, Dr. Babasaheb Ambedkar Bhavan, Dadar (East), Mumbai.",
-    image: "/gallery/achievements/achievements-04.jpg",
+    image: "/gallery/achievements/achievements-04.webp",
     label: "Teacher Award, 2024",
     isPhoto: true,
   },

@@ -21,7 +21,7 @@ export default function AboutTeaser() {
           <div className="coach-photo">
             <img
               className="coach-photo__img"
-              src="/assets/coach-portrait.jpg"
+              src="/assets/coach-portrait.webp"
               alt="Amar Ravindra More, chess coach at Exchange Chess Academy, Mumbai"
               width="720"
               height="900"

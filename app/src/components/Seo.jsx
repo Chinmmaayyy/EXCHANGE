@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 const SITE_URL = "https://www.exchangechessacademy.com";
+const DEFAULT_KEYWORDS = "chess coaching in Mumbai, home chess coach Mumbai, personal chess tutor Mumbai, FIDE rated chess coach, chess classes in Bandra, chess coaching Powai, chess tutor Andheri, chess classes Juhu, chess coach South Mumbai, chess classes Dadar, chess tutor Malad, chess classes Borivali, chess tutor Chembur, chess coaching Thane, online chess classes Mumbai, chess teacher Amar Ravindra More, Exchange Chess Academy";
 
 function upsertMeta(attr, key, content) {
   let el = document.head.querySelector(`meta[${attr}="${key}"]`);
@@ -12,11 +13,12 @@ function upsertMeta(attr, key, content) {
   el.setAttribute("content", content);
 }
 
-export default function Seo({ title, description, path = "/", jsonLd }) {
+export default function Seo({ title, description, keywords, path = "/", jsonLd }) {
   useEffect(() => {
     const prevTitle = document.title;
     if (title) document.title = title;
     if (description) upsertMeta("name", "description", description);
+    upsertMeta("name", "keywords", keywords || DEFAULT_KEYWORDS);
 
     const url = `${SITE_URL}${path}`;
     let canonical = document.head.querySelector('link[rel="canonical"]');
@@ -44,7 +46,7 @@ export default function Seo({ title, description, path = "/", jsonLd }) {
       document.title = prevTitle;
       if (ldScript) ldScript.remove();
     };
-  }, [title, description, path, jsonLd]);
+  }, [title, description, keywords, path, jsonLd]);
 
   return null;
 }

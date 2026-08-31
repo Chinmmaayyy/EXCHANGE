@@ -1,8 +1,12 @@
+import { useOutletContext } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
-import { ClockIcon, AwardIcon, HomeIcon, UsersIcon, ShieldCheckIcon, WhatsAppIcon, ArrowRightIcon } from "./Icons.jsx";
+import { ClockIcon, AwardIcon, HomeIcon, UsersIcon, ShieldCheckIcon, WhatsAppIcon, CalendarIcon } from "./Icons.jsx";
 import { waLink } from "../data/content.js";
 
-export default function Hero() {
+export default function Hero({ onOpenModal: propOnOpenModal }) {
+  const context = useOutletContext();
+  const onOpenModal = propOnOpenModal || context?.onOpenModal;
+
   return (
     <section className="hero" id="home">
       <div className="container hero__grid">
@@ -14,6 +18,10 @@ export default function Hero() {
             FIDE-rated coach with 25+ years of chess teaching experience across Mumbai.
           </p>
           <div className="hero__ctas">
+            <button className="btn btn-primary btn-lg" onClick={onOpenModal}>
+              <CalendarIcon size={19} />
+              Book Skill Assessment
+            </button>
             <a
               className="btn btn-whatsapp btn-lg"
               href={waLink("Hi, I'd like to enquire about chess coaching sessions.")}
@@ -22,10 +30,6 @@ export default function Hero() {
             >
               <WhatsAppIcon size={19} />
               Enquire on WhatsApp
-            </a>
-            <a className="btn btn-outline btn-lg" href="#programs">
-              Explore Coaching
-              <ArrowRightIcon size={17} />
             </a>
           </div>
           <div className="hero__trust">
@@ -40,7 +44,7 @@ export default function Hero() {
           <div className="hero__photo-frame">
             <img
               className="hero__photo"
-              src="/assets/hero-teaching.jpg"
+              src="/assets/hero-teaching.webp"
               alt="A chess coach guiding a young student through a move during a 1-to-1 lesson"
               width="1100"
               height="825"

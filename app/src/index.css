@@ -1567,3 +1567,179 @@ address { font-style: normal; }
 /* ---------- 404 ---------- */
 .not-found { text-align: center; padding-block: clamp(60px, 10vw, 120px); }
 
+/* ---------- Testimonials ---------- */
+.section--testimonials {
+  background: linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
+  color: var(--white);
+}
+.section--testimonials .eyebrow { color: var(--gold-400); }
+.section--testimonials h2 { color: var(--white); }
+.section--testimonials .lede { color: var(--neutral-200); opacity: 0.9; }
+
+.testimonials-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 36px;
+}
+.testimonial-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-lg);
+  padding: 28px 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+.testimonial-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.testimonial-card__stars {
+  display: flex;
+  gap: 4px;
+}
+.testimonial-card__tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-400);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+}
+.testimonial-card__quote {
+  position: relative;
+  flex-grow: 1;
+  margin: 0 0 20px;
+}
+.testimonial-card__quote-icon {
+  color: var(--gold-500);
+  opacity: 0.25;
+  position: absolute;
+  top: -8px;
+  left: -6px;
+}
+.testimonial-card__quote p {
+  position: relative;
+  z-index: 1;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--neutral-100);
+  font-style: italic;
+}
+.testimonial-card__footer {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.testimonial-card__author strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--white);
+}
+.testimonial-card__author span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--gold-400);
+  opacity: 0.9;
+  margin-top: 2px;
+}
+.testimonials-cta__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+/* ---------- Enquiry Modal / Popup ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 990;
+  background: rgba(7, 20, 38, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.25s var(--ease) forwards;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: clamp(24px, 5vw, 36px);
+  box-shadow: var(--shadow-lg), 0 20px 50px rgba(0, 0, 0, 0.4);
+  border: 1.5px solid var(--gold-500);
+  animation: modalSlideUp 0.3s var(--ease) forwards;
+}
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--neutral-100);
+  color: var(--navy-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s var(--ease);
+}
+.modal-close:hover {
+  background: var(--navy-900);
+  color: var(--white);
+}
+
+.modal-header h2 {
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  color: var(--navy-950);
+  margin-bottom: 6px;
+}
+.modal-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.modal-note {
+  font-size: 0.78rem;
+  color: var(--muted-2);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.nav__enquire-btn {
+  padding: 8px 16px;
+  font-size: 0.88rem;
+}
+@media (max-width: 640px) {
+  .nav__enquire-btn { display: none; }
+}
+
+

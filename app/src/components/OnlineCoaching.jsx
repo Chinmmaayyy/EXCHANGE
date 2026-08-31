@@ -1,5 +1,6 @@
+import { useOutletContext } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
-import { CheckIcon, WhatsAppIcon, MonitorIcon } from "./Icons.jsx";
+import { CheckIcon, WhatsAppIcon, MonitorIcon, TrendingUpIcon, UsersIcon, CalendarIcon } from "./Icons.jsx";
 import { waLink } from "../data/content.js";
 
 const points = [
@@ -10,7 +11,37 @@ const points = [
   "Flexible scheduling from anywhere",
 ];
 
-export default function OnlineCoaching() {
+// Sample tactical position pieces (Unicode chess characters rendered sharply in SVG)
+const initialPosition = [
+  // Black pieces (top rows y=0,1,2)
+  { x: 4, y: 0, p: "♚", color: "#0b1f3a" },
+  { x: 3, y: 0, p: "♛", color: "#0b1f3a" },
+  { x: 2, y: 0, p: "♝", color: "#0b1f3a" },
+  { x: 5, y: 2, p: "♞", color: "#0b1f3a" },
+  { x: 0, y: 1, p: "♟", color: "#0b1f3a" },
+  { x: 1, y: 1, p: "♟", color: "#0b1f3a" },
+  { x: 2, y: 1, p: "♟", color: "#0b1f3a" },
+  { x: 4, y: 3, p: "♟", color: "#0b1f3a" },
+  { x: 6, y: 1, p: "♟", color: "#0b1f3a" },
+  { x: 7, y: 1, p: "♟", color: "#0b1f3a" },
+
+  // White pieces (bottom rows y=4,5,6,7)
+  { x: 4, y: 7, p: "♔", color: "#d4af37" },
+  { x: 3, y: 7, p: "♕", color: "#d4af37" },
+  { x: 2, y: 4, p: "♗", color: "#d4af37" },
+  { x: 5, y: 5, p: "♘", color: "#d4af37" },
+  { x: 0, y: 6, p: "♙", color: "#d4af37" },
+  { x: 1, y: 6, p: "♙", color: "#d4af37" },
+  { x: 3, y: 4, p: "♙", color: "#d4af37" },
+  { x: 4, y: 4, p: "♙", color: "#d4af37" },
+  { x: 6, y: 6, p: "♙", color: "#d4af37" },
+  { x: 7, y: 6, p: "♙", color: "#d4af37" },
+];
+
+export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
+  const context = useOutletContext();
+  const onOpenModal = propOnOpenModal || context?.onOpenModal;
+
   return (
     <section className="section section--alt" id="online-coaching">
       <div className="container split split--reverse">
@@ -22,23 +53,48 @@ export default function OnlineCoaching() {
                 <p className="screen-mock__title">Live 1-to-1 Session</p>
               </div>
               <div className="screen-mock__body">
-                <svg viewBox="0 0 8 8" className="screen-mock__board" role="img" aria-label="Chess board">
+                <svg viewBox="0 0 8 8" className="screen-mock__board" role="img" aria-label="Chess board with active game session">
                   {Array.from({ length: 64 }, (_, i) => {
                     const x = i % 8;
                     const y = Math.floor(i / 8);
                     const dark = (x + y) % 2 === 1;
-                    return <rect key={i} x={x} y={y} width="1" height="1" fill={dark ? "#14294a" : "#f6ecce"} />;
+                    return (
+                      <rect
+                        key={i}
+                        x={x}
+                        y={y}
+                        width="1"
+                        height="1"
+                        fill={dark ? "#14294a" : "#f6ecce"}
+                      />
+                    );
                   })}
+
+                  {initialPosition.map((piece, idx) => (
+                    <text
+                      key={idx}
+                      x={piece.x + 0.5}
+                      y={piece.y + 0.78}
+                      fontSize="0.72"
+                      textAnchor="middle"
+                      fill={piece.color}
+                      fontWeight="bold"
+                      style={{ userSelect: "none" }}
+                    >
+                      {piece.p}
+                    </text>
+                  ))}
                 </svg>
                 <div className="screen-mock__side">
                   <span className="screen-mock__chip"><MonitorIcon size={15} />Screen share</span>
-                  <span className="screen-mock__chip">Game analysis</span>
-                  <span className="screen-mock__chip">Live coaching</span>
+                  <span className="screen-mock__chip"><TrendingUpIcon size={15} />Game analysis</span>
+                  <span className="screen-mock__chip"><UsersIcon size={15} />Live coaching</span>
                 </div>
               </div>
             </div>
           </div>
         </Reveal>
+
         <Reveal>
           <p className="eyebrow">Online Chess Coaching</p>
           <h2>1-to-1 Online Chess Coaching</h2>
@@ -55,6 +111,10 @@ export default function OnlineCoaching() {
             ₹1,200 / hour for online coaching
           </p>
           <div className="split__ctas">
+            <button className="btn btn-primary btn-lg" onClick={onOpenModal}>
+              <CalendarIcon size={18} />
+              Book Skill Assessment
+            </button>
             <a
               className="btn btn-whatsapp btn-lg"
               href={waLink("Hi, I'd like to enquire about online chess coaching.")}
@@ -62,7 +122,7 @@ export default function OnlineCoaching() {
               rel="noopener noreferrer"
             >
               <WhatsAppIcon size={18} />
-              Enquire About Online Coaching
+              Enquire on WhatsApp
             </a>
           </div>
         </Reveal>

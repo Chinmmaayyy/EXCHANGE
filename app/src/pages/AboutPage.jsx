@@ -1,10 +1,14 @@
+import { useOutletContext } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Seo from "../components/Seo.jsx";
+import Testimonials from "../components/Testimonials.jsx";
 import { GraduationCapIcon, UsersIcon, WhatsAppIcon, PhoneIcon, ShieldCheckIcon, AwardIcon } from "../components/Icons.jsx";
 import { waLink, coachCredentials, schoolsTaught, WHATSAPP_NUMBER } from "../data/content.js";
 
 export default function AboutPage() {
+  const { onOpenModal } = useOutletContext() || {};
+
   return (
     <>
       <Seo
@@ -31,7 +35,7 @@ export default function AboutPage() {
               <div className="coach-photo">
                 <img
                   className="coach-photo__img"
-                  src="/assets/coach-portrait.jpg"
+                  src="/assets/coach-portrait.webp"
                   alt="Amar Ravindra More, chess coach at Exchange Chess Academy, Mumbai"
                   width="720"
                   height="900"
@@ -140,6 +144,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <Testimonials onOpenModal={onOpenModal} />
 
       <section className="section section--alt">
         <div className="container">

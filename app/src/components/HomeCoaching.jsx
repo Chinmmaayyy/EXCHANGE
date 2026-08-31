@@ -1,5 +1,6 @@
+import { useOutletContext } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
-import { CheckIcon, WhatsAppIcon } from "./Icons.jsx";
+import { CheckIcon, WhatsAppIcon, CalendarIcon } from "./Icons.jsx";
 import { waLink } from "../data/content.js";
 
 const points = [
@@ -10,7 +11,10 @@ const points = [
   "Structured, progressive chess development",
 ];
 
-export default function HomeCoaching() {
+export default function HomeCoaching({ onOpenModal: propOnOpenModal }) {
+  const context = useOutletContext();
+  const onOpenModal = propOnOpenModal || context?.onOpenModal;
+
   return (
     <section className="section" id="home-coaching">
       <div className="container split">
@@ -27,6 +31,10 @@ export default function HomeCoaching() {
             ))}
           </ul>
           <div className="split__ctas">
+            <button className="btn btn-primary btn-lg" onClick={onOpenModal}>
+              <CalendarIcon size={18} />
+              Book Skill Assessment
+            </button>
             <a
               className="btn btn-whatsapp btn-lg"
               href={waLink("Hi, I'd like to check availability for home chess coaching in my area.")}
@@ -41,7 +49,7 @@ export default function HomeCoaching() {
         <Reveal>
           <div className="split__visual visual-panel visual-panel--photo">
             <img
-              src="/assets/home-coaching.jpg"
+              src="/assets/home-coaching.webp"
               alt="Amar Ravindra More coaching two students at a home chess session in Mumbai"
               loading="lazy"
               width="1024"

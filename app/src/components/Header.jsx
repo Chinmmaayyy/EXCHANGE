@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { PhoneIcon, WhatsAppIcon, MenuIcon, CloseIcon } from "./Icons.jsx";
 import { navLinks, mobileNavLinks, waLink, PHONE_DISPLAY } from "../data/content.js";
 
-export default function Header() {
+export default function Header({ onOpenModal }) {
   const [scrolled, setScrolled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
 
@@ -36,7 +36,7 @@ export default function Header() {
       <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
         <div className="container nav">
           <Link to="/" className="brand" aria-label="Exchange Chess Academy — home">
-            <img className="brand__mark" src="/assets/logo-mark.png" alt="" width="26" height="42" />
+            <img className="brand__mark" src="/assets/logo-mark.webp" alt="" width="26" height="42" />
             <span className="brand__text">
               <span className="brand__name">Exchange Chess Academy</span>
               <span className="brand__sub">Chess Coaching · Mumbai</span>
@@ -50,9 +50,9 @@ export default function Header() {
           </nav>
 
           <div className="nav__actions">
-            <a className="btn-ghost-icon nav__call" href="tel:+919892865594" aria-label="Call Exchange Chess Academy">
-              <PhoneIcon size={19} />
-            </a>
+            <button className="btn btn-outline nav__enquire-btn" onClick={onOpenModal}>
+              Enquire
+            </button>
             <a
               className="btn btn-whatsapp"
               href={waLink("Hi, I'd like to know more about chess coaching at Exchange Chess Academy.")}
