@@ -17,41 +17,7 @@ export default function AboutTeaser() {
   return (
     <section className="section" id="about">
       <div className="container about__grid">
-        <Reveal>
-          <div className="coach-photo">
-            <img
-              className="coach-photo__img"
-              src="/assets/coach-portrait.webp"
-              alt="Amar Ravindra More, chess coach at Exchange Chess Academy, Mumbai"
-              width="720"
-              height="900"
-              loading="lazy"
-            />
-            <div className="coach-photo__badge">FIDE ID 46637966 · Standard Rating 1603</div>
-          </div>
-
-          <div className="coach-badges">
-            <span className="tag"><AwardIcon size={14} />FIDE Rated Player</span>
-            <span className="tag"><ShieldCheckIcon size={14} />Verified Facts Only</span>
-          </div>
-
-          <div className="coach-mini-stats">
-            <div className="coach-mini-stats__item">
-              <div className="coach-mini-stats__num">1603</div>
-              <div className="coach-mini-stats__label">Standard</div>
-            </div>
-            <div className="coach-mini-stats__item">
-              <div className="coach-mini-stats__num">25+</div>
-              <div className="coach-mini-stats__label">Years</div>
-            </div>
-            <div className="coach-mini-stats__item">
-              <div className="coach-mini-stats__num">1,500+</div>
-              <div className="coach-mini-stats__label">Students</div>
-            </div>
-          </div>
-        </Reveal>
-
-        <Reveal>
+        <Reveal className="about__copy-col">
           <p className="eyebrow">About the Coach</p>
           <h2>Amar Ravindra More</h2>
           <p style={{ color: "var(--gold-600)", fontWeight: 700, marginTop: 6, marginBottom: 20 }}>
@@ -82,6 +48,40 @@ export default function AboutTeaser() {
               Read Full Profile
               <ArrowRightIcon size={17} />
             </Link>
+          </div>
+        </Reveal>
+
+        <Reveal className="about__photo-col">
+          <div className="coach-photo">
+            <img
+              className="coach-photo__img"
+              src="/assets/coach-portrait.webp"
+              alt="Amar Ravindra More, chess coach at Exchange Chess Academy, Mumbai"
+              width="720"
+              height="900"
+              loading="lazy"
+            />
+            <div className="coach-photo__badge">FIDE ID 46637966 · Standard Rating 1603</div>
+          </div>
+
+          <div className="coach-badges">
+            <span className="tag"><AwardIcon size={14} />FIDE Rated Player</span>
+            <span className="tag"><ShieldCheckIcon size={14} />Verified Facts Only</span>
+          </div>
+
+          <div className="coach-mini-stats">
+            <div className="coach-mini-stats__item">
+              <div className="coach-mini-stats__num">1603</div>
+              <div className="coach-mini-stats__label">Standard</div>
+            </div>
+            <div className="coach-mini-stats__item">
+              <div className="coach-mini-stats__num">25+</div>
+              <div className="coach-mini-stats__label">Years</div>
+            </div>
+            <div className="coach-mini-stats__item">
+              <div className="coach-mini-stats__num">1,500+</div>
+              <div className="coach-mini-stats__label">Students</div>
+            </div>
           </div>
         </Reveal>
       </div>

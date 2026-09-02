@@ -34,8 +34,40 @@ export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
   return (
     <section className="section section--alt" id="online-coaching">
       <div className="container split split--reverse">
-        <Reveal>
-          <div className="split__visual visual-panel visual-panel--screen">
+        <Reveal className="split__copy">
+          <p className="eyebrow">Online Chess Coaching</p>
+          <h2>1-to-1 Online Chess Coaching</h2>
+          <p className="lede" style={{ marginTop: 14 }}>
+            Live, personalized online coaching for students who prefer to learn from the comfort of home
+            — with the same individual attention as an in-person session.
+          </p>
+          <ul className="feature-list">
+            {points.map((p) => (
+              <li key={p}><CheckIcon size={19} />{p}</li>
+            ))}
+          </ul>
+          <p style={{ marginTop: 22, fontWeight: 700, color: "var(--navy-900)" }}>
+            Pricing available on request
+          </p>
+          <div className="split__ctas">
+            <button className="btn btn-primary btn-lg" onClick={() => onOpenModal && onOpenModal("Online Coaching")}>
+              <CalendarIcon size={18} />
+              Book Skill Assessment
+            </button>
+            <a
+              className="btn btn-whatsapp btn-lg"
+              href={waLink("Hi, I'd like to ask for the rate for online chess coaching.")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <WhatsAppIcon size={18} />
+              Ask for Online Rate
+            </a>
+          </div>
+        </Reveal>
+
+        <Reveal className="split__visual">
+          <div className="visual-panel visual-panel--screen">
             <div className="screen-mock" aria-hidden="true">
               <div className="screen-mock__bar">
                 <span></span><span></span><span></span>
@@ -72,38 +104,6 @@ export default function OnlineCoaching({ onOpenModal: propOnOpenModal }) {
                 </div>
               </div>
             </div>
-          </div>
-        </Reveal>
-
-        <Reveal>
-          <p className="eyebrow">Online Chess Coaching</p>
-          <h2>1-to-1 Online Chess Coaching</h2>
-          <p className="lede" style={{ marginTop: 14 }}>
-            Live, personalized online coaching for students who prefer to learn from the comfort of home
-            — with the same individual attention as an in-person session.
-          </p>
-          <ul className="feature-list">
-            {points.map((p) => (
-              <li key={p}><CheckIcon size={19} />{p}</li>
-            ))}
-          </ul>
-          <p style={{ marginTop: 22, fontWeight: 700, color: "var(--navy-900)" }}>
-            Pricing available on request
-          </p>
-          <div className="split__ctas">
-            <button className="btn btn-primary btn-lg" onClick={() => onOpenModal && onOpenModal("Online Coaching")}>
-              <CalendarIcon size={18} />
-              Book Skill Assessment
-            </button>
-            <a
-              className="btn btn-whatsapp btn-lg"
-              href={waLink("Hi, I'd like to ask for the rate for online chess coaching.")}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon size={18} />
-              Ask for Online Rate
-            </a>
           </div>
         </Reveal>
       </div>
