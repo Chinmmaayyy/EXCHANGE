@@ -12,7 +12,7 @@ export default function Hero({ onOpenModal: propOnOpenModal }) {
       <div className="container hero__grid">
         <Reveal className="hero__copy">
           <p className="eyebrow">Exchange Chess Academy · Mumbai</p>
-          <h1>Master Chess. Build Confidence. Think Ahead.</h1>
+          <h1>Master Chess. Build Con<span className="fi-pair">fi</span>dence. Think Ahead.</h1>
           <p className="lede">
             Personalized 1-to-1 chess coaching at your home or online, led by Amar Ravindra More — a
             FIDE-rated coach with 25+ years of chess teaching experience across Mumbai.
