@@ -340,16 +340,22 @@ p.body-text { color: var(--muted); max-width: 62ch; }
 .nav__links {
   display: none;
   align-items: center;
-  gap: 30px;
+  gap: 26px;
 }
-.nav__links a {
+.nav__links a,
+.nav-dropdown-trigger {
   font-size: 0.94rem;
   font-weight: 600;
   color: var(--navy-800);
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
-.nav__links a::after {
+.nav__links a::after,
+.nav-dropdown-trigger::after {
   content: "";
   position: absolute;
   left: 0; right: 0; bottom: 0;
@@ -359,10 +365,76 @@ p.body-text { color: var(--muted); max-width: 62ch; }
   transform-origin: left;
   transition: transform 0.2s var(--ease);
 }
-.nav__links a:hover::after { transform: scaleX(1); }
+.nav__links a:hover::after,
+.nav-dropdown-trigger:hover::after { transform: scaleX(1); }
+
+/* Dropdown Menu */
+.nav-item--has-dropdown {
+  position: relative;
+}
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+  min-width: 270px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s var(--ease);
+  z-index: 600;
+}
+.nav-item--has-dropdown:hover .nav-dropdown,
+.nav-item--has-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown__link {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px !important;
+  border-radius: var(--r-sm);
+  color: var(--navy-900) !important;
+  transition: background-color 0.18s var(--ease) !important;
+}
+.nav-dropdown__link::after {
+  display: none !important;
+}
+.nav-dropdown__link:hover {
+  background: var(--neutral-100);
+}
+.nav-dropdown__link svg {
+  color: var(--gold-600);
+  flex-shrink: 0;
+}
+.nav-dropdown__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.nav-dropdown__text strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+.nav-dropdown__text span {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 2px;
+}
 
 .nav__actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .nav__call { display: none; }
+
 
 @media (max-width: 480px) {
   .brand__sub { display: none; }

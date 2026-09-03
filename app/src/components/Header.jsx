@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { PhoneIcon, WhatsAppIcon, MenuIcon, CloseIcon } from "./Icons.jsx";
+import { PhoneIcon, WhatsAppIcon, MenuIcon, CloseIcon, ChevronDownIcon, BoardIcon, BuildingIcon, UserIcon } from "./Icons.jsx";
 import { navLinks, mobileNavLinks, waLink, PHONE_DISPLAY } from "../data/content.js";
+
+const DROPDOWN_ICONS = {
+  board: BoardIcon,
+  building: BuildingIcon,
+  user: UserIcon,
+};
 
 export default function Header({ onOpenModal }) {
   const [scrolled, setScrolled] = useState(false);
@@ -44,9 +50,37 @@ export default function Header({ onOpenModal }) {
           </Link>
 
           <nav className="nav__links" aria-label="Primary">
-            {navLinks.map((l) => (
-              <Link key={l.href} to={l.href}>{l.label}</Link>
-            ))}
+            {navLinks.map((l) => {
+              if (l.hasDropdown) {
+                return (
+                  <div key={l.href} className="nav-item nav-item--has-dropdown">
+                    <Link to={l.href} className="nav-dropdown-trigger">
+                      <span>{l.label}</span>
+                      <ChevronDownIcon size={12} />
+                    </Link>
+                    <div className="nav-dropdown">
+                      {l.dropdownItems.map((sub) => {
+                        const SubIcon = DROPDOWN_ICONS[sub.icon] || BoardIcon;
+                        return (
+                          <Link key={sub.href} to={sub.href} className="nav-dropdown__link">
+                            <SubIcon size={18} />
+                            <div className="nav-dropdown__text">
+                              <strong>{sub.label}</strong>
+                              <span>{sub.sub}</span>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <Link key={l.href} to={l.href}>
+                  {l.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="nav__actions">
@@ -103,3 +137,4 @@ export default function Header({ onOpenModal }) {
     </>
   );
 }
+

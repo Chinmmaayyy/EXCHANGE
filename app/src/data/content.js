@@ -453,15 +453,23 @@ export function formatCoachWhatsAppMessage({
 
 export const navLinks = [
   { href: "/about", label: "About" },
-  { href: "/programs", label: "Programs" },
-  { href: "/school-programs", label: "For Schools" },
-  { href: "/coach-network", label: "Join as Coach" },
+  {
+    href: "/programs",
+    label: "Programs",
+    hasDropdown: true,
+    dropdownItems: [
+      { href: "/programs", label: "Coaching Programs", sub: "1-to-1 Home & Online Coaching", icon: "board" },
+      { href: "/school-programs", label: "For Schools", sub: "Institutional B2B Partnerships", icon: "building" },
+      { href: "/coach-network", label: "Join as a Coach", sub: "Freelance Coaching Network", icon: "user" },
+    ],
+  },
   { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
 ];
+
 
 
 export const mobileNavLinks = [

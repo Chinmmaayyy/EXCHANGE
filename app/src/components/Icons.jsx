@@ -265,3 +265,12 @@ export function HandshakeIcon({ size = 18, ...props }) {
   );
 }
 
+export function ChevronDownIcon({ size = 14, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} strokeWidth={2.4} {...props}>
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
+
