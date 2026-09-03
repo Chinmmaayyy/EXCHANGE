@@ -1,8 +1,9 @@
 import { Fragment } from "react";
+import { Link, useOutletContext } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Seo from "../components/Seo.jsx";
-import { BoardIcon, TrendingUpIcon, AwardIcon, UserIcon, UsersIcon, CheckIcon, WhatsAppIcon, ArrowRightIcon } from "../components/Icons.jsx";
+import { BoardIcon, TrendingUpIcon, AwardIcon, UserIcon, UsersIcon, CheckIcon, WhatsAppIcon, ArrowRightIcon, BuildingIcon } from "../components/Icons.jsx";
 import { programs } from "../data/content.js";
 import { waLink } from "../data/content.js";
 
@@ -21,11 +22,13 @@ const progressionSteps = [
 ];
 
 export default function ProgramsPage() {
+  const { onOpenSchoolModal } = useOutletContext() || {};
+
   return (
     <>
       <Seo
         title="Chess Coaching Programs | Exchange Chess Academy"
-        description="Chess Fundamentals, Intermediate Development, Advanced & Tournament Training, and 1-to-1 or small group coaching — all taught by FIDE-rated coach Amar Ravindra More in Mumbai."
+        description="Chess Fundamentals, Intermediate Development, Advanced & Tournament Training, and School Programs — taught by FIDE-rated coach Amar Ravindra More in Mumbai."
         path="/programs"
       />
       <PageHeader
@@ -74,7 +77,7 @@ export default function ProgramsPage() {
                 as="article"
                 key={p.slug}
                 className="split"
-                style={{ marginBottom: i === programs.length - 1 ? 0 : "clamp(56px, 8vw, 88px)" }}
+                style={{ marginBottom: "clamp(56px, 8vw, 88px)" }}
               >
                 <div>
                   <div className="program-card__icon"><Icon size={26} strokeWidth={1.8} /></div>
@@ -93,6 +96,43 @@ export default function ProgramsPage() {
               </Reveal>
             );
           })}
+
+          {/* B2B School Programs Callout Card */}
+          <Reveal as="article" className="split school-program-callout-card">
+            <div>
+              <div className="program-card__icon" style={{ background: "linear-gradient(135deg, var(--gold-600), var(--gold-500))", color: "var(--navy-950)" }}>
+                <BuildingIcon size={26} strokeWidth={1.8} />
+              </div>
+              <p className="program-card__tag" style={{ color: "var(--gold-600)" }}>Institutional B2B Offering</p>
+              <h2>Chess Programs for Schools</h2>
+              <p className="lede" style={{ marginTop: 10 }}>
+                Structured chess curriculum, after-school activities, and chess clubs for educational institutions across Mumbai.
+              </p>
+              <p style={{ marginTop: 16, fontWeight: 700, color: "var(--navy-800)" }}>
+                Best for: Schools, Principals &amp; Activity Coordinators
+              </p>
+            </div>
+            <div>
+              <ul className="feature-list">
+                <li><CheckIcon size={19} />Customized to fit your school's schedule, grade levels &amp; batch size</li>
+                <li><CheckIcon size={19} />Delivered by FIDE-rated Coach Amar Ravindra More (25+ years experience)</li>
+                <li><CheckIcon size={19} />Improves focus, critical thinking, problem-solving &amp; sportsmanship</li>
+                <li><CheckIcon size={19} />Clear progression roadmap and inter-school tournament opportunities</li>
+              </ul>
+              <div style={{ marginTop: 24, display: "flex", flexWrap: "wrap", gap: 12 }}>
+                <Link to="/school-programs" className="btn btn-navy">
+                  <span>Explore School Programs</span>
+                  <ArrowRightIcon size={16} />
+                </Link>
+                <button
+                  className="btn btn-outline"
+                  onClick={() => onOpenSchoolModal && onOpenSchoolModal()}
+                >
+                  Request Proposal
+                </button>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -118,3 +158,4 @@ export default function ProgramsPage() {
     </>
   );
 }
+

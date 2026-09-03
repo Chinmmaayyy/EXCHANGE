@@ -208,3 +208,60 @@ export function QuoteIcon({ size = 24, ...props }) {
     </svg>
   );
 }
+
+export function BuildingIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+      <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01" />
+    </svg>
+  );
+}
+
+export function TargetIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="6" />
+      <circle cx="12" cy="12" r="2" />
+    </svg>
+  );
+}
+
+export function BrainIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 11 18Z" />
+      <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 13 18Z" />
+      <path d="M12 5v14" />
+    </svg>
+  );
+}
+
+export function PuzzleIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.47 1.23 0 1.7l-1.568 1.568c-.23.23-.338.556-.289.878.14.928-.152 1.884-.872 2.604s-1.676 1.012-2.604.872c-.322-.049-.648.059-.878.289l-1.568 1.568c-.47.47-1.23.47-1.7 0l-1.568-1.568c-.23-.23-.556-.338-.878-.289-.928.14-1.884-.152-2.604-.872s-1.012-1.676-.872-2.604c.049-.322-.059-.648-.289-.878l-1.568-1.568c-.47-.47-.47-1.23 0-1.7l1.568-1.568c.23-.23.338-.556.289-.878-.14-.928.152-1.884.872-2.604s1.676-1.012 2.604-.872c.322.049.648-.059.878-.289l1.568-1.568c.47-.47 1.23-.47 1.7 0l1.568 1.568c.23.23.556.338.878.289.928-.14 1.884.152 2.604.872s1.012 1.676.872 2.604Z" />
+    </svg>
+  );
+}
+
+export function BookOpenIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+    </svg>
+  );
+}
+
+export function HandshakeIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4l-4.6-4.6a1 1 0 0 0-1.4 0L11 11" />
+      <path d="m18 10 3-3a1 1 0 0 0 0-1.4L18.4 3a1 1 0 0 0-1.4 0L13 7" />
+      <path d="M10 11 6.4 7.4a1 1 0 0 0-1.4 0L3 9.4a1 1 0 0 0 0 1.4L7 15" />
+    </svg>
+  );
+}
+

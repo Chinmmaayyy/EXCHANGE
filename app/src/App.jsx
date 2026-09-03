@@ -3,6 +3,8 @@ import RootLayout from "./layouts/RootLayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ProgramsPage from "./pages/ProgramsPage.jsx";
+import SchoolProgramsPage from "./pages/SchoolProgramsPage.jsx";
+import CoachNetworkPage from "./pages/CoachNetworkPage.jsx";
 import AchievementsPage from "./pages/AchievementsPage.jsx";
 import GalleryPage from "./pages/GalleryPage.jsx";
 import BlogIndexPage from "./pages/BlogIndexPage.jsx";
@@ -17,6 +19,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
+          <Route path="/school-programs" element={<SchoolProgramsPage />} />
+          <Route path="/coach-network" element={<CoachNetworkPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/blog" element={<BlogIndexPage />} />
@@ -27,3 +31,5 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+

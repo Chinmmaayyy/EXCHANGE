@@ -2060,4 +2060,486 @@ address { font-style: normal; }
   .nav__enquire-btn { display: none; }
 }
 
+/* ==========================================================================
+   B2B Chess Programs for Schools & Educational Institutions
+   ========================================================================== */
+
+/* Trust Strip */
+.school-trust-strip {
+  background: var(--navy-900);
+  color: var(--white);
+  padding-block: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.school-trust-strip__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.school-trust-strip__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.94rem;
+  color: var(--gold-400);
+}
+.school-trust-strip__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.school-trust-strip__label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--neutral-200);
+  opacity: 0.8;
+}
+.school-trust-strip__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.school-trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.school-trust-chip svg {
+  color: var(--gold-400);
+}
+
+/* Homepage Teaser Card */
+.section--school-teaser {
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--neutral-50) 100%);
+  border-block: 1px solid var(--line);
+}
+.school-teaser-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+}
+.school-teaser-card__image-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--navy-900);
+}
+.school-teaser-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s var(--ease);
+}
+.school-teaser-card:hover .school-teaser-card__img {
+  transform: scale(1.03);
+}
+.school-teaser-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(7, 20, 38, 0.82);
+  color: var(--gold-400);
+  backdrop-filter: blur(6px);
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+.school-teaser-card__content {
+  padding: 22px 24px 26px;
+}
+.school-teaser-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy-900);
+  margin-bottom: 6px;
+}
+.school-teaser-card__sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.school-teaser-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.school-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--navy-800);
+  background: var(--neutral-100);
+  padding: 5px 11px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+}
+.school-chip svg {
+  color: var(--gold-600);
+}
+
+/* Benefits Grid */
+.school-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.school-benefit-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.school-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201, 162, 39, 0.4);
+}
+.school-benefit-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+  color: var(--gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.school-benefit-card h3 {
+  font-size: 1.15rem;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+}
+.school-benefit-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Flexible Formats & Proposal Notice */
+.school-formats-list {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.school-formats-list h3 {
+  font-size: 1rem;
+  color: var(--navy-900);
+  margin-bottom: 14px;
+}
+.school-formats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.school-format-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy-800);
+  background: var(--white);
+  padding: 10px 14px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+}
+.school-format-item svg {
+  color: var(--gold-500);
+  flex-shrink: 0;
+}
+
+.school-proposal-notice {
+  margin-top: 28px;
+  background: linear-gradient(135deg, var(--gold-100), var(--neutral-100));
+  border: 1.5px solid rgba(201, 162, 39, 0.4);
+  border-radius: var(--r-md);
+  padding: 22px 24px;
+}
+.school-proposal-notice p {
+  font-size: 0.95rem;
+  color: var(--navy-900);
+  margin: 0;
+}
+
+/* School Classroom Card */
+.school-classroom-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+}
+.school-classroom-card__img-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--navy-900);
+}
+.school-classroom-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.school-classroom-card__overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 20, 38, 0.92) 100%);
+  color: var(--white);
+  padding: 20px 22px 18px;
+}
+.school-classroom-card__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-bottom: 4px;
+}
+.school-classroom-card__overlay p {
+  font-size: 0.86rem;
+  color: var(--neutral-100);
+  margin: 0;
+}
+.school-classroom-card__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 16px;
+  background: var(--neutral-50);
+}
+.school-mini-feature {
+  text-align: center;
+}
+.school-mini-feature strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--navy-900);
+}
+.school-mini-feature span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* School Enquiry Form Container */
+.school-form-card {
+  background: var(--white);
+  border: 1.5px solid var(--gold-500);
+  border-radius: var(--r-lg);
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: var(--shadow-lg);
+  max-width: 840px;
+  margin-inline: auto;
+}
+
+/* School Program Callout on Programs Page */
+.school-program-callout-card {
+  background: linear-gradient(135deg, var(--neutral-50) 0%, var(--gold-100) 100%);
+  border: 1.5px solid rgba(201, 162, 39, 0.4);
+  border-radius: var(--r-lg);
+  padding: clamp(28px, 4vw, 40px);
+}
+
+/* Responsive tweaks for school B2B section */
+@media (max-width: 768px) {
+  .school-trust-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .school-trust-strip__chips {
+    margin-top: 4px;
+  }
+  .school-classroom-card__features {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .school-mini-feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 6px 12px;
+    background: var(--white);
+    border-radius: var(--r-sm);
+    border: 1px solid var(--line);
+  }
+  .school-mini-feature span {
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================================
+   Freelance Coach Network Pathway
+   ========================================================================== */
+
+/* Transparency Strip */
+.coach-transparency-strip {
+  background: var(--neutral-100);
+  border-bottom: 1px solid var(--line);
+  padding-block: 16px;
+}
+.coach-transparency-strip__inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--navy-900);
+}
+.coach-transparency-strip__inner svg {
+  color: var(--gold-600);
+  flex-shrink: 0;
+}
+
+/* 3-Step Process Cards */
+.coach-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.coach-step-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.coach-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.coach-step-card__num {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  background: var(--gold-100);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  margin-bottom: 14px;
+}
+.coach-step-card h3 {
+  font-size: 1.12rem;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+}
+.coach-step-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.coach-disclaimer-box {
+  background: var(--white);
+  border: 1px dashed var(--line);
+  border-radius: var(--r-md);
+  padding: 18px 22px;
+  text-align: center;
+  max-width: 760px;
+  margin-inline: auto;
+}
+.coach-disclaimer-box p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Homepage Coach Teaser Banner (Subtle, non-competing) */
+.section--coach-teaser {
+  padding-block: clamp(32px, 5vw, 56px);
+  background: var(--white);
+}
+.coach-teaser-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-900) 100%);
+  color: var(--white);
+  border-radius: var(--r-lg);
+  padding: clamp(28px, 4vw, 40px);
+  box-shadow: var(--shadow-md);
+}
+.coach-teaser-banner__content {
+  max-width: 620px;
+}
+.coach-teaser-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-bottom: 8px;
+}
+.coach-teaser-banner h3 {
+  color: var(--white);
+  font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+  margin-bottom: 8px;
+}
+.coach-teaser-banner p {
+  color: var(--neutral-200);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.coach-teaser-banner__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .coach-teaser-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .coach-teaser-banner__ctas {
+    width: 100%;
+  }
+  .coach-teaser-banner__ctas .btn {
+    flex: 1;
+  }
+}
+
+
+
 

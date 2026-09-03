@@ -301,11 +301,160 @@ export const faqs = [
   { q: "Do you provide tournament preparation?", a: "Yes, advanced students preparing for tournaments can take up the Advanced & Tournament Training program, which covers calculation, strategy and game analysis." },
   { q: "How much does a session cost?", a: "Coaching is priced at ₹1,200 per hour. Plans can be tailored to the student's level, goals and schedule." },
   { q: "How can I contact the coach?", a: "You can call or message Amar Ravindra More directly on WhatsApp at +91 98928 65594, or use the enquiry form below." },
+  { q: "Do you offer chess programs for schools?", a: "Yes! Exchange Chess Academy partners with educational institutions and schools across Mumbai to conduct structured chess programs, after-school activities, and chess clubs." },
 ];
+
+export const schoolProgramTypes = [
+  "After-School Chess Activity",
+  "Weekly Chess Classes",
+  "Chess Club",
+  "Structured Chess Curriculum",
+  "Tournament Preparation",
+  "Other / Custom Requirement",
+];
+
+export const schoolProgramBenefits = [
+  { icon: "target", title: "Improves Concentration & Focus", desc: "Helps students sustain attention and focus during academic and strategic tasks." },
+  { icon: "brain", title: "Develops Critical & Strategic Thinking", desc: "Encourages students to evaluate options, plan ahead, and foresee outcomes." },
+  { icon: "puzzle", title: "Strengthens Problem-Solving Skills", desc: "Trains young minds to analyze complex situations and find creative solutions." },
+  { icon: "book", title: "Supports Cognitive Development", desc: "Boosts memory, pattern recognition, spatial awareness, and logical reasoning." },
+  { icon: "handshake", title: "Encourages Discipline & Sportsmanship", desc: "Instills respect, emotional control, and fair play in victory and defeat." },
+  { icon: "trophy", title: "Structured Progression & Competition", desc: "Clear step-by-step curriculum with school and inter-school tournament opportunities." },
+];
+
+export const schoolProgramFormats = [
+  "After-school chess activities",
+  "Weekly chess sessions",
+  "Multiple sessions per week",
+  "Chess clubs",
+  "Beginner-to-advanced structured programs",
+  "Tournament preparation",
+  "Inter-school chess initiatives",
+];
+
+export function formatSchoolWhatsAppMessage({
+  schoolName,
+  contactName,
+  designation,
+  phone,
+  email,
+  location,
+  studentsCount,
+  programType,
+  frequency,
+  message,
+}) {
+  const lines = [
+    "🏫 *School Chess Program Enquiry*",
+    "",
+    `🏛️ *School:* ${schoolName.trim()}`,
+    `👤 *Contact Person:* ${contactName.trim()}`,
+    `💼 *Designation:* ${designation.trim()}`,
+    `📞 *Phone:* ${phone.trim()}`,
+    `📧 *Email:* ${email.trim()}`,
+    `📍 *Location:* ${location.trim()}`,
+  ];
+  if (studentsCount && studentsCount.trim()) {
+    lines.push(`👥 *Estimated Students:* ${studentsCount.trim()}`);
+  }
+  if (programType) {
+    lines.push(`♟️ *Program Requirement:* ${programType}`);
+  }
+  if (frequency && frequency.trim()) {
+    lines.push(`📅 *Preferred Frequency:* ${frequency.trim()}`);
+  }
+  if (message && message.trim()) {
+    lines.push(`💬 *Additional Requirements:* ${message.trim()}`);
+  }
+  return lines.join("\n");
+}
+
+export const coachCoachingTypes = [
+  "Home Coaching",
+  "Online Coaching",
+  "School Programs",
+  "Small Group Coaching",
+  "Any Suitable Opportunity",
+];
+
+export const coachEligibilityPoints = [
+  { icon: "target", title: "Passion for Teaching Chess", desc: "Enthusiasm for sharing knowledge and nurturing young minds in chess." },
+  { icon: "brain", title: "Strong Chess Understanding", desc: "Solid grasp of chess fundamentals, tactics, openings, and strategic planning." },
+  { icon: "user", title: "Teaching Experience", desc: "Previous experience coaching children or adults is valuable and preferred." },
+  { icon: "home", title: "Ability to Travel", desc: "Willingness to travel for home coaching sessions across Mumbai based on requirement." },
+  { icon: "clock", title: "Flexible Availability", desc: "Slot flexibility for weekday evenings, weekends, or after-school sessions." },
+  { icon: "handshake", title: "Professional Approach", desc: "Punctual, student-friendly, disciplined, and communicative." },
+];
+
+export const coachNetworkSteps = [
+  {
+    step: "Step 1",
+    title: "Apply to Join the Network",
+    desc: "Share your chess background, teaching experience, location, and availability through our online form.",
+  },
+  {
+    step: "Step 2",
+    title: "Profile Review",
+    desc: "Your details are reviewed based on current and future coaching requirements across Mumbai.",
+  },
+  {
+    step: "Step 3",
+    title: "Potential Coaching Opportunities",
+    desc: "Suitable freelance coaching opportunities may be shared based on student requirements, location, and availability.",
+  },
+];
+
+export function formatCoachWhatsAppMessage({
+  fullName,
+  phone,
+  email,
+  location,
+  chessExp,
+  teachingExp,
+  rating,
+  availability,
+  coachingType,
+  preferredAreas,
+  additionalInfo,
+}) {
+  const lines = [
+    "👨‍🏫 *Freelance Chess Coach Enquiry*",
+    "",
+    `👤 *Name:* ${fullName.trim()}`,
+    `📞 *Phone:* ${phone.trim()}`,
+    `📧 *Email:* ${email.trim()}`,
+    `📍 *Location:* ${location.trim()}`,
+  ];
+  if (chessExp && chessExp.trim()) {
+    lines.push(`♟️ *Chess Experience:* ${chessExp.trim()}`);
+  }
+  if (teachingExp && teachingExp.trim()) {
+    lines.push(`👨‍🏫 *Teaching Experience:* ${teachingExp.trim()}`);
+  }
+  if (rating && rating.trim()) {
+    lines.push(`🏅 *Chess Rating:* ${rating.trim()}`);
+  }
+  if (availability && availability.trim()) {
+    lines.push(`🗓️ *Availability:* ${availability.trim()}`);
+  }
+  if (coachingType) {
+    lines.push(`🎯 *Preferred Coaching Type:* ${coachingType}`);
+  }
+  if (preferredAreas && preferredAreas.trim()) {
+    lines.push(`📍 *Preferred Teaching Areas:* ${preferredAreas.trim()}`);
+  }
+  if (additionalInfo && additionalInfo.trim()) {
+    lines.push(`💬 *Additional Information:* ${additionalInfo.trim()}`);
+  }
+  lines.push("");
+  lines.push("*I am interested in exploring freelance chess coaching opportunities with Exchange Chess Academy.*");
+  return lines.join("\n");
+}
 
 export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/programs", label: "Programs" },
+  { href: "/school-programs", label: "For Schools" },
   { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
   { href: "/#pricing", label: "Pricing" },
@@ -316,6 +465,8 @@ export const navLinks = [
 export const mobileNavLinks = [
   { href: "/about", label: "About the Coach" },
   { href: "/programs", label: "Coaching Programs" },
+  { href: "/school-programs", label: "Chess Programs for Schools" },
+  { href: "/coach-network", label: "Join Our Coach Network" },
   { href: "/#home-coaching", label: "Home Coaching" },
   { href: "/#online-coaching", label: "Online Coaching" },
   { href: "/#pricing", label: "Pricing" },
@@ -330,6 +481,8 @@ export const mobileNavLinks = [
 export const footerLinks = [
   { href: "/about", label: "About the Coach" },
   { href: "/programs", label: "Coaching Programs" },
+  { href: "/school-programs", label: "School Programs" },
+  { href: "/coach-network", label: "Join as a Coach" },
   { href: "/#home-coaching", label: "Home Coaching" },
   { href: "/#online-coaching", label: "Online Coaching" },
   { href: "/#pricing", label: "Pricing" },
@@ -338,3 +491,5 @@ export const footerLinks = [
   { href: "/#faq", label: "FAQ" },
   { href: "/blog", label: "Blog" },
 ];
+
+
