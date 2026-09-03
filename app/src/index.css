@@ -2540,6 +2540,53 @@ address { font-style: normal; }
   }
 }
 
+/* Quick enquiry links for Schools & Coaches under contact form */
+.other-enquiry-links {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
+  text-align: center;
+}
+.other-enquiry-links p {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.other-enquiry-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.other-enquiry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  background: var(--neutral-100);
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  transition: all 0.18s var(--ease);
+}
+.other-enquiry-btn:hover {
+  background: var(--navy-900);
+  color: var(--white);
+  border-color: var(--navy-900);
+}
+.other-enquiry-btn svg {
+  color: var(--gold-600);
+}
+.other-enquiry-btn:hover svg {
+  color: var(--gold-400);
+}
+
+
 
 
 

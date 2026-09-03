@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
-import { PhoneIcon, WhatsAppIcon, MapPinIcon, WalletIcon } from "./Icons.jsx";
+import { PhoneIcon, WhatsAppIcon, MapPinIcon, WalletIcon, BuildingIcon, UserIcon } from "./Icons.jsx";
 import { WHATSAPP_NUMBER, PHONE_DISPLAY, GPAY_DISPLAY, waLink } from "../data/content.js";
 
 const initialForm = {
@@ -152,8 +153,23 @@ export default function Contact() {
                   <WhatsAppIcon size={18} />
                   Send Enquiry via WhatsApp
                 </button>
-                <p className="form-status" role="status" aria-live="polite">{status}</p>
+                {status && <p className="form-status" role="status" aria-live="polite">{status}</p>}
                 <p className="form-note">Your message opens in WhatsApp, ready to send directly to Amar Ravindra More.</p>
+              </div>
+
+              {/* Quick links for Schools & Freelance Coaches */}
+              <div className="other-enquiry-links">
+                <p>Are you a School or Chess Coach?</p>
+                <div className="other-enquiry-buttons">
+                  <Link to="/school-programs" className="other-enquiry-btn">
+                    <BuildingIcon size={15} />
+                    <span>School Proposals</span>
+                  </Link>
+                  <Link to="/coach-network" className="other-enquiry-btn">
+                    <UserIcon size={15} />
+                    <span>Join as a Coach</span>
+                  </Link>
+                </div>
               </div>
             </form>
           </Reveal>

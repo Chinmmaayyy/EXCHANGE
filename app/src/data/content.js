@@ -455,12 +455,14 @@ export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/programs", label: "Programs" },
   { href: "/school-programs", label: "For Schools" },
+  { href: "/coach-network", label: "Join as Coach" },
   { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
 ];
+
 
 export const mobileNavLinks = [
   { href: "/about", label: "About the Coach" },
