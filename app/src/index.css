@@ -570,9 +570,9 @@ body.nav-open { overflow: hidden; }
 .hero__art::after {
   content: "";
   position: absolute;
-  top: 26px;
+  top: 20px;
   right: -16px;
-  bottom: 78px;
+  bottom: 50px;
   width: 52%;
   border-radius: var(--r-lg);
   background: linear-gradient(135deg, var(--gold-400), var(--gold-100));
@@ -589,7 +589,7 @@ body.nav-open { overflow: hidden; }
   background: var(--neutral-100);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9.5;
 }
 .hero__photo {
   width: 100%;
