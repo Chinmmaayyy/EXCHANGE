@@ -44,10 +44,10 @@ export default function Hero({ onOpenModal: propOnOpenModal }) {
           <div className="hero__photo-frame">
             <img
               className="hero__photo"
-              src="/assets/hero-teaching.webp"
-              alt="A chess coach guiding a young student through a move during a 1-to-1 lesson"
-              width="1100"
-              height="825"
+              src="/assets/hero-home1.webp"
+              alt="Exchange Chess Academy personalized coaching session in Mumbai"
+              width="1024"
+              height="572"
             />
             <div className="hero__quote-overlay">
               <QuoteIcon size={20} className="hero__quote-icon" />
