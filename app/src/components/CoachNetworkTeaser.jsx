@@ -18,12 +18,12 @@ export default function CoachNetworkTeaser({ onOpenCoachModal }) {
             </p>
           </div>
           <div className="coach-teaser-banner__ctas">
-            <Link to="/coach-network" className="btn btn-outline">
-              <span>Join Our Coaching Network</span>
+            <Link to="/coach-network" className="btn btn-gold btn-lg">
+              <span>Join Our Coach Network</span>
               <ArrowRightIcon size={16} />
             </Link>
             <button
-              className="btn btn-navy"
+              className="btn btn-outline"
               onClick={() => onOpenCoachModal && onOpenCoachModal()}
             >
               <span>Connect as a Coach</span>
