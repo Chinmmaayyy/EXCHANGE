@@ -52,8 +52,8 @@ export default function HomeCoaching({ onOpenModal: propOnOpenModal }) {
               src="/assets/home-coaching.webp"
               alt="Personalized Chess Coaching Across Mumbai — Exchange Chess Academy 1-to-1 home and online coaching"
               loading="lazy"
-              width="2752"
-              height="1536"
+              width="1024"
+              height="572"
             />
           </div>
         </Reveal>
