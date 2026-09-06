@@ -9,6 +9,8 @@ import AchievementsPage from "./pages/AchievementsPage.jsx";
 import GalleryPage from "./pages/GalleryPage.jsx";
 import BlogIndexPage from "./pages/BlogIndexPage.jsx";
 import BlogPostPage from "./pages/BlogPostPage.jsx";
+import CurriculumPage from "./pages/CurriculumPage.jsx";
+import CurriculumLevelPage from "./pages/CurriculumLevelPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 export default function App() {
@@ -18,6 +20,8 @@ export default function App() {
         <Route element={<RootLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/curriculum" element={<CurriculumPage />} />
+          <Route path="/curriculum/:slug" element={<CurriculumLevelPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/school-programs" element={<SchoolProgramsPage />} />
           <Route path="/coach-network" element={<CoachNetworkPage />} />

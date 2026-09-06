@@ -458,6 +458,7 @@ export const navLinks = [
     label: "Programs",
     hasDropdown: true,
     dropdownItems: [
+      { href: "/curriculum", label: "7-Level Curriculum", sub: "Complete 7-Stage Learning Journey", icon: "compass" },
       { href: "/programs", label: "Coaching Programs", sub: "1-to-1 Home & Online Coaching", icon: "board" },
       { href: "/school-programs", label: "For Schools", sub: "Institutional B2B Partnerships", icon: "building" },
       { href: "/coach-network", label: "Join as a Coach", sub: "Freelance Coaching Network", icon: "user" },
@@ -470,9 +471,8 @@ export const navLinks = [
   { href: "/#contact", label: "Contact" },
 ];
 
-
-
 export const mobileNavLinks = [
+  { href: "/curriculum", label: "7-Level Chess Curriculum" },
   { href: "/about", label: "About the Coach" },
   { href: "/programs", label: "Coaching Programs" },
   { href: "/school-programs", label: "Chess Programs for Schools" },
@@ -489,6 +489,7 @@ export const mobileNavLinks = [
 ];
 
 export const footerLinks = [
+  { href: "/curriculum", label: "7-Level Curriculum" },
   { href: "/about", label: "About the Coach" },
   { href: "/programs", label: "Coaching Programs" },
   { href: "/school-programs", label: "School Programs" },
@@ -501,5 +502,3 @@ export const footerLinks = [
   { href: "/#faq", label: "FAQ" },
   { href: "/blog", label: "Blog" },
 ];
-
-

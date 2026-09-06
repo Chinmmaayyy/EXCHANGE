@@ -273,4 +273,105 @@ export function ChevronDownIcon({ size = 14, ...props }) {
   );
 }
 
+export function CompassIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+    </svg>
+  );
+}
+
+export function EyeIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+export function LayersIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" />
+      <polyline points="2 12 12 17 22 12" />
+    </svg>
+  );
+}
+
+export function CrownIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
+    </svg>
+  );
+}
+
+export function TrophyIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+      <path d="M4 22h16" />
+      <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+      <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+      <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+    </svg>
+  );
+}
+
+export function ZapIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  );
+}
+
+export function CheckCircleIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  );
+}
+
+export function SearchIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
+export function FilterIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+    </svg>
+  );
+}
+
+export function SparklesIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+      <path d="M5 3v4M3 5h4M19 17v4M17 19h4" />
+    </svg>
+  );
+}
+
+export function ShieldIcon({ size = 18, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...base} {...props}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  );
+}
+
+
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { PhoneIcon, WhatsAppIcon, MenuIcon, CloseIcon, ChevronDownIcon, BoardIcon, BuildingIcon, UserIcon } from "./Icons.jsx";
+import { PhoneIcon, WhatsAppIcon, MenuIcon, CloseIcon, ChevronDownIcon, BoardIcon, BuildingIcon, UserIcon, CompassIcon } from "./Icons.jsx";
 import { navLinks, mobileNavLinks, waLink, PHONE_DISPLAY } from "../data/content.js";
 
 const DROPDOWN_ICONS = {
+  compass: CompassIcon,
   board: BoardIcon,
   building: BuildingIcon,
   user: UserIcon,
