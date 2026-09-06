@@ -50,12 +50,12 @@ export default function Testimonials({ onOpenModal }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // 3-second auto-sliding carousel
+  // 8.5-second auto-sliding carousel (relaxed, readable pace)
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonialsData.length);
-    }, 3000);
+    }, 8500);
     return () => clearInterval(interval);
   }, [isPaused]);
 
