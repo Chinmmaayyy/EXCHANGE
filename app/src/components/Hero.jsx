@@ -46,8 +46,8 @@ export default function Hero({ onOpenModal: propOnOpenModal }) {
               className="hero__photo"
               src="/assets/hero-teaching.webp"
               alt="A chess coach guiding a young student through a move during a 1-to-1 lesson"
-              width="1100"
-              height="825"
+              width="2752"
+              height="1536"
             />
             <div className="hero__quote-overlay">
               <QuoteIcon size={20} className="hero__quote-icon" />
