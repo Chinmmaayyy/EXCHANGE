@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://www.exchangechessacademy.com";
+const SITE_URL = "https://www.exchangechessacademy.in";
 const DEFAULT_KEYWORDS = "chess coaching in Mumbai, home chess coach Mumbai, personal chess tutor Mumbai, FIDE rated chess coach, chess classes in Bandra, chess coaching Powai, chess tutor Andheri, chess classes Juhu, chess coach South Mumbai, chess classes Dadar, chess tutor Malad, chess classes Borivali, chess tutor Chembur, chess coaching Thane, online chess classes Mumbai, chess teacher Amar Ravindra More, Exchange Chess Academy";
 
 function upsertMeta(attr, key, content) {
