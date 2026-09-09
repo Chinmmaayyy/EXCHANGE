@@ -22,7 +22,7 @@ const boardPieces = [
 
   // White pieces (bottom rows)
   { type: "wP", x: 0, y: 6 }, { type: "wP", x: 1, y: 6 }, { type: "wP", x: 2, y: 6 }, { type: "wP", x: 3, y: 6 },
-  { type: "wP", x: 4, y: 4 }, { type: "wN", x: 5, y: 5 }, { type: "wP", x: 6, y: 6 }, { type: "wP", x: 7, y: 6 },
+  { type: "wP", x: 4, y: 4 }, { type: "wN", x: 5, y: 5 }, { type: "wP", x: 5, y: 6 }, { type: "wP", x: 6, y: 6 }, { type: "wP", x: 7, y: 6 },
   { type: "wR", x: 0, y: 7 }, { type: "wN", x: 1, y: 7 }, { type: "wB", x: 2, y: 7 }, { type: "wQ", x: 3, y: 7 },
   { type: "wK", x: 4, y: 7 }, { type: "wB", x: 5, y: 7 }, { type: "wR", x: 7, y: 7 },
 ];
