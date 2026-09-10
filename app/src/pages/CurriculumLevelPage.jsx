@@ -272,6 +272,29 @@ export default function CurriculumLevelPage() {
               </div>
             </div>
           </Reveal>
+
+          {/* Bottom Level Navigation Bar */}
+          <div className="level-nav-bar" style={{ marginTop: 40 }}>
+            {prevLevel ? (
+              <Link to={`/curriculum/${prevLevel.slug}`} className="level-nav-btn level-nav-btn--prev">
+                <span className="level-nav-btn__sub">← Previous Level</span>
+                <strong className="level-nav-btn__title">Level 0{prevLevel.levelNumber}: {prevLevel.title}</strong>
+              </Link>
+            ) : (
+              <div />
+            )}
+            <Link to="/curriculum" className="level-nav-btn level-nav-btn--all">
+              <span>View All 7 Levels</span>
+            </Link>
+            {nextLevel ? (
+              <Link to={`/curriculum/${nextLevel.slug}`} className="level-nav-btn level-nav-btn--next">
+                <span className="level-nav-btn__sub">Next Level →</span>
+                <strong className="level-nav-btn__title">Level 0{nextLevel.levelNumber}: {nextLevel.title}</strong>
+              </Link>
+            ) : (
+              <div />
+            )}
+          </div>
         </div>
       </section>
 
