@@ -9,14 +9,14 @@ export default function BlogIndexPage() {
   return (
     <>
       <Seo
-        title="Chess Coaching Across Mumbai | Exchange Chess Academy Blog"
-        description="Home and online chess coaching guides for Bandra, Andheri, Juhu, Powai, Malad, Borivali, Chembur, Thane and South Mumbai, with FIDE-rated coach Amar Ravindra More."
+        title="Chess Coaching Across Mumbai | Grant Road, Western, Central & Harbour Line"
+        description="Home and 1-to-1 online chess coaching guides for Grant Road, South Mumbai, Bandra, Andheri, Juhu, Powai, Borivali, Dombivli to CST, Harbour Line, and Western Line with FIDE-rated coach Amar Ravindra More."
         path="/blog"
       />
       <PageHeader
-        eyebrow="Blog"
+        eyebrow="Blog & Locality Guides"
         title="Chess Coaching Across Mumbai"
-        lede="Home and online chess coaching is available across Mumbai. Here's what that looks like in some of the city's most-searched neighbourhoods."
+        lede="Home and 1-to-1 online chess coaching is available across all major Mumbai train lines — including Grant Road, South Mumbai, Western Line, Central Line (Dombivli to CST), and Harbour Line."
         crumb="Blog"
       />
 

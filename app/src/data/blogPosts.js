@@ -247,6 +247,114 @@ export const blogPosts = [
       { q: "Is small group coaching available in South Mumbai?", a: "Yes, small group coaching for 2–3 students is available alongside personal 1-to-1 sessions." },
     ],
   },
+  {
+    slug: "grant-road-south-mumbai",
+    area: "Grant Road & South Mumbai",
+    title: "Chess Coaching in Grant Road, Charni Road & South Mumbai",
+    metaTitle: "Chess Classes in Grant Road & South Mumbai | Exchange Chess Academy",
+    metaDescription: "Personalized 1-to-1 home and online chess coaching in Grant Road, Charni Road, Girgaon, Tardeo, Breach Candy, Mumbai Central and South Mumbai with FIDE-rated coach Amar Ravindra More.",
+    excerpt: "1-to-1 home and online chess coaching across Grant Road, Charni Road, Girgaon, Tardeo, Peddar Road, Breach Candy, and Mumbai Central.",
+    intro: "Grant Road, Charni Road, and the surrounding South Mumbai belt (Girgaon, Tardeo, Breach Candy, Peddar Road, and Mumbai Central) form one of the city's historic education and family hubs. Home coaching in this region brings FIDE-rated instruction directly to your doorstep.",
+    sections: [
+      {
+        heading: "Coaching in Grant Road, Charni Road & Nearby Lanes",
+        body: "Amar Ravindra More has extensive teaching experience in South Mumbai (including Sharda Mandir School in Gamdevi). Families in Grant Road, Charni Road, Girgaon, and Tardeo can easily schedule home visits or 1-to-1 online lessons without navigating city traffic.",
+      },
+      {
+        heading: "From First Moves to Advanced Tactics",
+        body: "Whether your child is starting out with basic piece movement or preparing for official FIDE rated tournaments, coaching is customized to their exact learning speed — spanning Chess Fundamentals, Tactical Vision, and Tournament Preparation.",
+      },
+      {
+        heading: "Flexible Home & Online Sessions",
+        body: "Weekday evening and weekend morning slots are available across Grant Road, Marine Lines, Churchgate, Mumbai Central, Mahalaxmi, and Peddar Road. Small groups of 2–3 friends or siblings in the same building can also be coached together.",
+      },
+    ],
+    faqs: [
+      { q: "Do you offer home chess coaching near Grant Road and Charni Road?", a: "Yes! Amar Ravindra More travels to homes across Grant Road, Charni Road, Girgaon, Tardeo, Breach Candy, and Mumbai Central." },
+      { q: "What age groups are covered?", a: "Students from age 5+ to adults are welcome, with custom plans for beginners to tournament players." },
+    ],
+  },
+  {
+    slug: "dombivli-kalyan-central",
+    area: "Dombivli to CST (Central Line)",
+    title: "Chess Coaching along Central Line: Dombivli to CSMT / CST",
+    metaTitle: "Chess Classes in Dombivli, Thane & Central Line | Exchange Chess Academy",
+    metaDescription: "Home and 1-to-1 online chess classes across the Central Line — Dombivli, Kalyan, Thane, Mulund, Ghatkopar, Kurla, Dadar, Byculla to CSMT/CST with FIDE-rated coach Amar Ravindra More.",
+    excerpt: "Comprehensive 1-to-1 home and online chess coaching connecting Dombivli, Kalyan, Thane, Mulund, Ghatkopar, Kurla, Dadar, Byculla, and CSMT/CST.",
+    intro: "The Central Line corridor — stretching from Dombivli, Kalyan, and Thane through Mulund, Ghatkopar, Kurla, Dadar, and Byculla down to CSMT (CST) — is home to thousands of aspiring young chess players.",
+    sections: [
+      {
+        heading: "Seamless 1-to-1 Online & Home Coaching",
+        body: "For students living along the Central Line, travel time to physical coaching centers can consume hours. Our 1-to-1 interactive online coaching and targeted home visits deliver elite FIDE-rated instruction straight to your screen or home in Dombivli, Thane, Ghatkopar, or Dadar.",
+      },
+      {
+        heading: "Structured 7-Level Syllabus",
+        body: "Students follow Exchange Chess Academy's proven 7-level curriculum (Discover, See, Build, Think, Master, Compete, Evolve) ensuring systematic growth from beginner rules to master-level tactical calculation.",
+      },
+      {
+        heading: "Serving All Central Line Hubs",
+        body: "We cover all major Central Line stops: Dombivli, Kalyan, Kalwa, Mumbra, Thane, Mulund, Nahur, Bhandup, Kanjurmarg, Vikhroli, Ghatkopar, Vidyavihar, Kurla, Sion, Matunga, Dadar, Parel, Currey Road, Chinchpokli, Byculla, Sandhurst Road, and CSMT.",
+      },
+    ],
+    faqs: [
+      { q: "Is home coaching available in Dombivli or Thane?", a: "Yes, home visits and 1-to-1 online live sessions are available across all Central Line locations." },
+      { q: "How are online sessions conducted?", a: "Sessions use live video, interactive digital boards, screen sharing, and personalized game analysis." },
+    ],
+  },
+  {
+    slug: "harbour-line-navi-mumbai",
+    area: "Harbour Line & Navi Mumbai",
+    title: "Chess Coaching on Harbour Line & Navi Mumbai",
+    metaTitle: "Chess Classes in Harbour Line, Vashi & Navi Mumbai | Exchange Chess Academy",
+    metaDescription: "1-to-1 home and online chess coaching along Harbour Line — Chembur, Wadala, Vashi, Sanpada, Nerul, Belapur, Kharghar and Panvel with FIDE-rated coach Amar Ravindra More.",
+    excerpt: "Personalized home and online chess lessons across Harbour Line stations — Wadala, Chembur, Vashi, Nerul, Belapur, Kharghar, and Panvel.",
+    intro: "The Harbour Line connects key residential hubs across Mumbai and Navi Mumbai — from Wadala Road and Chembur to Vashi, Nerul, Belapur, Kharghar, and Panvel. We bring structured, FIDE-rated chess education to students along this entire route.",
+    sections: [
+      {
+        heading: "Convenient Home & Online Coaching",
+        body: "Navi Mumbai and Harbour Line families can access top-tier 1-to-1 chess lessons tailored to their family routines. Learn from home without hassle, guided by FIDE-rated coach Amar Ravindra More (25+ years experience, 1500+ students).",
+      },
+      {
+        heading: "From Hobby Play to Rating Competitions",
+        body: "Our training builds deep strategic thinking, emotional resilience, time management, and tactical precision — preparing students for school, district, state, and FIDE rated tournaments.",
+      },
+      {
+        heading: "Full Harbour Line Coverage",
+        body: "Covering Wadala, Sewri, Cotton Green, Reay Road, Dockyard Road, GTB Nagar, Chunabhatti, Kurla, Tilak Nagar, Chembur, Govandi, Mankhurd, Vashi, Sanpada, Juinagar, Nerul, Seawoods, Belapur, Kharghar, and Panvel.",
+      },
+    ],
+    faqs: [
+      { q: "Do you offer online classes for Navi Mumbai students?", a: "Yes, 1-to-1 live online coaching with flexible morning and evening slots is extremely popular across Vashi, Nerul, Kharghar, and Panvel." },
+      { q: "Can siblings take classes together?", a: "Yes, small group options for 2–3 students or siblings are available." },
+    ],
+  },
+  {
+    slug: "western-line-mumbai",
+    area: "Western Line (Churchgate to Virar)",
+    title: "Chess Coaching on Western Line: Churchgate to Virar",
+    metaTitle: "Chess Classes on Western Line, Grant Road to Virar | Exchange Chess Academy",
+    metaDescription: "Personalized 1-to-1 home & online chess coaching along Western Line — Churchgate, Grant Road, Dadar, Bandra, Andheri, Borivali, Vasai, Virar with FIDE-rated coach Amar Ravindra More.",
+    excerpt: "Complete Western Line coverage — Churchgate, Marine Lines, Charni Road, Grant Road, Mumbai Central, Dadar, Bandra, Andheri, Borivali, Vasai, and Virar.",
+    intro: "The Western Railway line is the backbone of Mumbai, connecting Churchgate, Grant Road, Dadar, Bandra, Andheri, Malad, Borivali, Dahisar, Mira Road, Vasai Road, and Virar. Exchange Chess Academy offers comprehensive home and 1-to-1 online coaching along this entire corridor.",
+    sections: [
+      {
+        heading: "Direct Home Visits & Interactive Online Coaching",
+        body: "Whether you live near Grant Road station, Bandra West, Andheri Lokhandwala, Borivali, or Vasai-Virar, Coach Amar Ravindra More provides expert personalized instruction suited to your level and goals.",
+      },
+      {
+        heading: "Personalized 1-to-1 Attention",
+        body: "Unlike crowded group classes where individual blunders are missed, our 1-to-1 coaching focuses on your specific strengths, weaknesses, calculation flaws, and opening repertoire.",
+      },
+      {
+        heading: "Western Line Stations Served",
+        body: "Serving Churchgate, Marine Lines, Charni Road, Grant Road, Mumbai Central, Mahalaxmi, Lower Parel, Prabhadevi, Dadar, Matunga Road, Mahim, Bandra, Khar Road, Santacruz, Vile Parle, Andheri, Jogeshwari, Goregaon, Malad, Kandivali, Borivali, Dahisar, Mira Road, Bhayandar, Naigaon, Vasai Road, Nallasopara, and Virar.",
+      },
+    ],
+    faqs: [
+      { q: "How do I book a chess assessment for my child?", a: "You can book a skill assessment directly via WhatsApp or the online enquiry form on our website." },
+      { q: "Is home coaching available for Grant Road and Western Line stations?", a: "Yes, home visits are available across South Mumbai, Western Suburbs, and extended stations." },
+    ],
+  },
 ];
 
 export function getBlogPost(slug) {
